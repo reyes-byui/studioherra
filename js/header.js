@@ -116,3 +116,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Ensure main-nav active class is set after menu is loaded
+function activateMainNavByHash() {
+    const hash = window.location.hash || '#home';
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === hash) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+// Run after menu is loaded
+window.addEventListener('DOMContentLoaded', function() {
+    // Wait for menu to be loaded
+    function waitForMenuAndActivate() {
+        if (document.querySelectorAll('.main-nav a').length) {
+            activateMainNavByHash();
+            window.addEventListener('hashchange', activateMainNavByHash);
+        } else {
+            setTimeout(waitForMenuAndActivate, 50);
+        }
+    }
+    waitForMenuAndActivate();
+});
