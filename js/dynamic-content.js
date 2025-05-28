@@ -9,38 +9,45 @@ window.addEventListener('DOMContentLoaded', function() {
             setTimeout(setupNavLinks, 50);
             return;
         }
-        function loadContent(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    contentSection.innerHTML = html;
-                    document.dispatchEvent(new Event('content:updated'));
-                })
-                .catch(() => {
-                    contentSection.innerHTML = '<p>Content could not be loaded.</p>';
-                });
-        }
         navLinks.forEach(link => {
             link.onclick = function(e) {
                 e.preventDefault();
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                const href = this.getAttribute('href');
-                if (href === '#home') {
-                    loadContent('content/home.html');
-                } else if (href === '#workout') {
-                    loadContent('content/workout.html');
-                } else if (href === '#journal') {
-                    loadContent('content/journal.html');
-                } else if (href === '#shop') {
-                    loadContent('content/shop.html');
-                } else if (href === '#about') {
-                    loadContent('content/about.html');
-                }
+                window.location.hash = this.getAttribute('href');
+                // Do not load content directly here; let the hashchange handler do it
             };
         });
-        // Optionally, load home.html by default on page load
-        loadContent('content/home.html');
     }
     setupNavLinks();
+
+    function loadContentByHash() {
+        const hash = window.location.hash || '#home';
+        let url = '';
+        if (hash === '#home') url = 'content/home.html';
+        else if (hash === '#workout') url = 'content/workout.html';
+        else if (hash === '#journal') url = 'content/journal.html';
+        else if (hash === '#shop') url = 'content/shop.html';
+        else if (hash === '#about') url = 'content/about.html';
+        else url = 'content/home.html';
+        const contentSection = document.getElementById('content');
+        if (!contentSection) {
+            console.error('No #content element found in DOM!');
+            return;
+        }
+        console.log('Loading content for hash:', hash, 'from', url);
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                contentSection.innerHTML = html;
+                document.dispatchEvent(new Event('content:updated'));
+            })
+            .catch(() => {
+                contentSection.innerHTML = '<p>Content could not be loaded.</p>';
+            });
+    }
+
+    // Initial content load
+    loadContentByHash();
+
+    // Load content when hash changes
+    window.addEventListener('hashchange', loadContentByHash);
 });
