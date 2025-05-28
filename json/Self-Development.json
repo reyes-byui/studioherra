@@ -1,0 +1,34 @@
+[
+    {
+    "data-category": "Self-Development",
+    "title": "Lorem Ipsum",
+    "date-published": "2025-05-27",
+    "author": "Herra",
+    "meta-description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    "meta-keywords": ["self-development", "personal growth", "motivation", "mindfulness", "productivity"],
+    "meta-image": "https://images.unsplash.com/photo-1491864483946-1f06be97b71d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "video-url": "https://www.youtube.com/watch?v=j7_lSP8Vc3o",
+    "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.",
+    "quote": "Stay hydrated and consider a light snack before the workout for energy.",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image-url": "https://images.unsplash.com/photo-1491864483946-1f06be97b71d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "conclusion": "In conclusion, self-development is a continuous journey that requires dedication and effort. By focusing on personal growth, we can achieve our goals and improve our overall well-being.",
+    "related-articles": ["Article 1", "Article 2", "Article 3"]
+  },
+  {
+    "data-category": "Self-Development",
+    "title": "Lorem Ipsum",
+    "date-published": "2025-05-27",
+    "author": "Herra",
+    "meta-description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    "meta-keywords": ["self-development", "personal growth", "motivation", "mindfulness", "productivity"],
+    "meta-image": "https://images.unsplash.com/photo-1491864483946-1f06be97b71d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "video-url": "https://www.youtube.com/watch?v=j7_lSP8Vc3o",
+    "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.",
+    "quote": "Stay hydrated and consider a light snack before the workout for energy.",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image-url": "https://images.unsplash.com/photo-1491864483946-1f06be97b71d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "conclusion": "In conclusion, self-development is a continuous journey that requires dedication and effort. By focusing on personal growth, we can achieve our goals and improve our overall well-being.",
+    "related-articles": ["Article 1", "Article 2", "Article 3"]
+  }
+]

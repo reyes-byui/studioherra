@@ -1,0 +1,548 @@
+:root {
+    --color-primary: #000000;
+    --color-secondary: #a47e4d;
+    --color-accent: #b89583;
+    --color-background: #fff;
+    --color-text: #292929;
+    --color-text-secondary: #ffffff;
+}
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+p {
+    font-family: 'Arial', sans-serif;
+    color: var(--color-text);
+    letter-spacing: 0.25pt;
+    text-align: justify;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-secondary);
+}
+img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    padding: 2em 0;
+}
+.icons {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+/* HEADER */
+.light-dark-mode img{
+    width: 60px;
+    height: 60px;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.journal-categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    width: 100%;
+    padding: 1em 0;
+}
+.journal-categories > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+.journal-categories div a {
+    padding: 0 1em;
+}
+.light-dark-mode {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.journal-categories img {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+#journal-category ul {
+    display: flex;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} 
+#journal-category li {
+    margin: 0;
+    padding: 0;
+}
+#journal-category a {
+    text-decoration: none;
+    background-color: var(--color-secondary);
+    color: white;
+}
+#journal-category a:hover {
+    background-color: transparent;
+    color: var(--color-secondary);
+    text-decoration: overline;
+}
+#heads {
+    display: flex; align-items: center; gap: 1em;
+}
+#heads a {
+    padding-right: 2em;
+}
+.home-hero {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+}
+.home-hero img {
+    width: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+.hero-text h1 {
+    color: var(--color-background);
+    font-size: 50pt;
+    padding: 0;
+    margin: 0;
+}
+.hero-text h2 {
+    color: var(--color-background);
+    font-size: 20pt;
+    padding: 0;
+    margin: 0;
+}
+.hero-text h3 {
+    color: var(--color-text-secondary);
+    font-size: 20pt;
+    margin: 0;
+    padding: 0;
+}
+.hero-text p {
+    text-align: center;
+    color: var(--color-background);
+    padding: 2em 0;
+    margin: 0 auto;
+    font-size: 16pt;
+    width: 50%;   
+}
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-background);
+    padding: 1em 2em 1em 2em;
+    box-shadow: 0 12px 32px -4px rgba(0,0,0,0.05);
+    z-index: 1;
+}
+.main-menu nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+.main-nav li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-nav a {
+    text-decoration: none;
+    font-size: 18pt;
+}
+.main-nav a:active, .main-nav a.active {
+    text-decoration: overline;
+    transition: background 0.2s, color 0.2s;
+    color: var(--color-secondary);
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+    list-style: none;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.journal-categories img {
+    width: 30px;
+    height: 30px;
+}
+/* HEADER ENDS HERE */
+/* MAIN BODY */
+#home h3,
+#about h3,
+#journal h3,
+#shop h3,
+#workout h3{
+    text-align: center;
+}
+#main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh
+}
+#left-column, #right-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 25%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+} 
+.column-title h2, p{
+    padding: 0.5em 0;
+    margin: 0;
+    text-align: left;
+}
+#left-column div, #right-column div {
+    padding: 2em;
+}
+#left-column::-webkit-scrollbar,
+#right-column::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+#left-column {
+    box-shadow: 8px 0 16px -8px rgba(0, 0, 0, 0.05);
+}
+#right-column {
+    box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 0.05);
+}
+/* MAIN CONTENT */
+#content, #workout-page {
+    width: 60%;
+    padding: 3.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+blockquote {
+    padding: 1em;
+    border-left: #a47e4d 5pt solid;
+    color: var(--color-secondary);
+    width: 80%;
+    font-size: 18pt;
+    margin: 0 auto;
+    text-align: left;
+}
+blockquote p {
+    font-family: 'Shippori Mincho', serif;
+    text-align: left;
+}
+blockquote footer {
+    font-style: italic;
+}
+/* journal.html */
+.categoryname{
+    font-size: 12pt;
+    color:#a47e4d;
+    opacity: 0.5;
+}
+
+/* workout.html */
+#workout-category ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 0;
+    margin: 0;
+    list-style: none;
+}
+#workout-category li {
+    list-style: none;
+}
+#workout-category a {
+    font-family: 'Arial', sans-serif;
+    font-size: small;
+}
+#workout-category a:active {
+    text-decoration: overline;
+    color: var(--color-secondary);
+}
+#workout-category a.active {
+    text-decoration: overline;
+    color: var(--color-secondary);
+}
+
+#workout-category a {
+    transition: color 0.2s, text-decoration 0.2s;
+}
+/* workout cards and journal cards */
+#workout-cards, #journal-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2em;
+    justify-items: center;
+    align-items: stretch;
+    margin-top: 2em;
+    text-align: left;
+    padding: 2em 0;
+}
+.workout-card, .journal-card {
+    border: 0.5pt solid rgb(143, 143, 143);
+    padding: 1em;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.workout-card img, .journal-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+}
+.workout-card h4, .journal-card h4 {
+    margin: 0.5em 0 0.25em 0;
+    font-size: 20pt;
+    color: var(--color-primary);
+    text-align: center;
+}
+.workout-card-meta, .journal-card-meta {
+    font-size: 0.95em;
+    color: #888;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+.workout-card-description, .journal-card-description {
+    font-size: 1em;
+    color: var(--color-text);
+    text-align: center;
+}
+/* end of workout.html */
+/* widget */
+#widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1em;
+    justify-content: space-between;
+}
+#widget .column-title {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#widget .column-title h2 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+/* SLIDE WIDGET PANEL */
+#slide-widget-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    max-width: 90vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 4px 0 24px -8px rgba(0,0,0,0.18);
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(.77,0,.18,1);
+    display: flex;
+    flex-direction: column;
+}
+#slide-widget-panel.open {
+    transform: translateX(0);
+}
+.slide-widget-content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 2em 1.5em 1em 1.5em;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.slide-widget-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.close-widget {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.2s;
+}
+.close-widget:hover {
+    color: var(--color-secondary);
+}
+/* MAIN CONTENT ENDS HERE */
+/* FOOTER */
+#footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0 -8px 32px -4px rgba(0,0,0,0.05);
+    background: var(--color-background);
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+.footer-links {
+    padding: 0;
+    margin: 0;
+}
+#copyright {
+    padding: 1em;
+    margin: 0;
+    font-family: 'Shippori Mincho', serif;
+}
+.media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+    margin: 0;
+    column-gap: 1.5em;
+}
+.media-icons a img {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+}
+/* Override for footer icons: no background on hover */
+.media-icons a:hover {
+    background-color: transparent !important;
+    opacity: 0.5 !important;
+}
+/* FOOTER ENDS HERE */
+/* journal-entry.html specific main layout */
+#main.journal-entry-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+#main.journal-entry-main #journal-content {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    width: 100%;
+}
+#main.journal-entry-main #content {
+    width: 100%;
+    min-height: 200px;
+    overflow: visible;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+}
+html.dark {
+    --color-primary: #fff;
+    --color-secondary: #a47e4d;
+    --color-accent: #b89583;
+    --color-background: #181818;
+    --color-text: #e0e0e0;
+    --color-text-secondary: #000000;
+    background: #181818;
+}
+body.dark, html.dark body {
+    background: #181818;
+    color: #e0e0e0;
+}
+html.dark header,
+html.dark .journal-categories,
+html.dark .home-hero,
+html.dark #main,
+html.dark #content,
+html.dark #left-column,
+html.dark #right-column,
+html.dark #main-nav,
+html.dark .journal-card,
+html.dark .workout-card {
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+}
+html.dark .main-nav a,
+html.dark .main-nav a:visited {
+    color: #fff;
+}
+html.dark .main-nav a.active,
+html.dark .main-nav a:active {
+    color: var(--color-secondary);
+}
+html.dark .light-dark-mode img.light-mode {
+    filter: invert(0);
+}
+html.dark .light-dark-mode img.dark-mode {
+    filter: invert(1);
+}
