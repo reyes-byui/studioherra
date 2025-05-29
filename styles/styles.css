@@ -268,7 +268,7 @@ header {
     box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 0.05);
 }
 /* MAIN CONTENT */
-#content, #workout-page {
+#content, #workout-page, #search-results {
     width: 60%;
     padding: 3.5em;
     overflow-y: auto;
@@ -279,6 +279,9 @@ header {
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+#search-results p {
+    text-align: center;
 }
 blockquote {
     padding: 1em;
@@ -318,6 +321,7 @@ blockquote footer {
 #workout-category a {
     font-family: 'Arial', sans-serif;
     font-size: small;
+    transition: color 0.2s, text-decoration 0.2s;
 }
 #workout-category a:active {
     text-decoration: overline;
@@ -328,9 +332,6 @@ blockquote footer {
     color: var(--color-secondary);
 }
 
-#workout-category a {
-    transition: color 0.2s, text-decoration 0.2s;
-}
 /* workout cards and journal cards */
 #workout-cards, #journal-cards {
     display: grid;
@@ -668,4 +669,71 @@ body.dark-mode a[href="partials/widget.html"] img {
 }
 .light-dark-mode img:hover {
     transform: scale(1.1) rotate(180deg);
+}
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.header-search input[type="text"] {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  min-width: 180px;
+  transition: border 0.2s;
+}
+.header-search input[type="text"]:focus {
+  border: 1.5px solid #a47e4d;
+}
+.header-search button {
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 20px;
+  background: #a47e4d;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.header-search button:hover {
+  background: #cfab7c;
+}
+.search-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+.search-cards .journal-card h4 {
+  color: var(--color-primary);
+  text-align: center;
+}
+.search-cards .journal-card-meta {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.search-cards .journal-card-description {
+  color: var(--color-text);
+  text-align: center;
+}
+.search-cards .journal-card {
+  border: 0.5pt solid rgb(143, 143, 143);
+  padding: 1em;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.search-cards .journal-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
 }
