@@ -39,7 +39,9 @@ window.addEventListener('DOMContentLoaded', function() {
                             ${entry['video-url']
                               ? (entry['video-url'].includes('youtube.com/watch?v=')
                                   ? `<div class="responsive-video"><iframe src="https://www.youtube.com/embed/${entry['video-url'].split('v=')[1].split('&')[0]}" allowfullscreen></iframe></div>`
-                                  : `<a href="${entry['video-url']}" target="_blank">Watch Video</a>`)
+                                  : (entry['video-url'].includes('youtu.be/')
+                                      ? `<div class="responsive-video"><iframe src="https://www.youtube.com/embed/${entry['video-url'].split('youtu.be/')[1].split(/[?&]/)[0]}" allowfullscreen></iframe></div>`
+                                      : `<div class="responsive-video"><iframe src="${entry['video-url']}" allowfullscreen></iframe></div>`))
                               : ''}
                         </div>
                         <ul class="journal-details">

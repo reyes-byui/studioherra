@@ -48,13 +48,13 @@ function renderWorkoutDetails(entry) {
     if (entry['video-url']) {
         if (entry['video-url'].includes('youtube.com/watch?v=')) {
             videoId = entry['video-url'].split('v=')[1].split('&')[0];
+            videoEmbed = `<div class="responsive-video"><iframe src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>`;
         } else if (entry['video-url'].includes('youtu.be/')) {
             videoId = entry['video-url'].split('youtu.be/')[1].split(/[?&]/)[0];
-        }
-        if (videoId) {
             videoEmbed = `<div class="responsive-video"><iframe src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>`;
         } else {
-            videoEmbed = `<a href="${entry['video-url']}" target="_blank">Watch Video</a>`;
+            // Embed non-YouTube video URLs as well
+            videoEmbed = `<div class="responsive-video"><iframe src="${entry['video-url']}" allowfullscreen></iframe></div>`;
         }
     }
     return (

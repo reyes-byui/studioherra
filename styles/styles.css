@@ -10,7 +10,6 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6, a {
     font-family: 'Shippori Mincho', serif;
@@ -47,10 +46,22 @@ img {
     padding: 0;
 }
 /* HEADER */
-.light-dark-mode img{
-    width: 60px;
-    height: 60px;
+.light-dark-mode {
+    padding-right: 2em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
+.light-dark-mode .light-mode {
+    background-color: white;
+    border-radius: 25%;
+}
+
+.light-dark-mode .dark-mode {
+    background-color: #e3c297;
+    border-radius: 25%;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -72,11 +83,6 @@ header {
 }
 .journal-categories div a {
     padding: 0 1em;
-}
-.light-dark-mode {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
 }
 .journal-categories img {
     width: 30px;
@@ -143,7 +149,7 @@ header {
     width: 100%;
     pointer-events: none;
 }
-.hero-text h1 {
+.hero-text a {
     color: var(--color-background);
     font-size: 50pt;
     padding: 0;
@@ -507,91 +513,159 @@ blockquote footer {
     box-sizing: border-box;
     padding: 0;
 }
-html.dark {
-    --color-primary: #fff;
-    --color-secondary: #a47e4d;
-    --color-accent: #b89583;
-    --color-background: #181818;
-    --color-text: #e0e0e0;
-    --color-text-secondary: #000000;
-    background: #181818;
-}
-body.dark, html.dark body {
-    background: #181818;
-    color: #e0e0e0;
-}
-html.dark header,
-html.dark .journal-categories,
-html.dark .home-hero,
-html.dark #main,
-html.dark #content,
-html.dark #left-column,
-html.dark #right-column,
-html.dark #main-nav,
-html.dark .journal-card,
-html.dark .workout-card {
-    background: #232323 !important;
-    color: #e0e0e0 !important;
-}
-html.dark .main-nav a,
-html.dark .main-nav a:visited {
-    color: #fff;
-}
-html.dark .main-nav a.active,
-html.dark .main-nav a:active {
-    color: var(--color-secondary);
-}
-html.dark .light-dark-mode img.light-mode {
-    filter: invert(0);
-}
-html.dark .light-dark-mode img.dark-mode {
-    filter: invert(1);
-}
-/* === workout-session.html specific styles === */
-body.workout-session .home-hero {
-    display: none !important;
-}
-body.workout-session #main {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-    padding: 3.5em 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-}
-body.workout-session #main::-webkit-scrollbar {
-    display: none;
-}
-body.workout-session #workout-page,
-body.workout-session #content {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: block;
-    overflow: visible;
-}
-body.workout-session #workout-page iframe,
-body.workout-session #workout-page .workout-video {
-    padding: 2em 0;
-}
-body.workout-session #content {
-    padding-top: 2em;
-}
-/* === end workout-session.html specific styles === */
 .responsive-video {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
+  height: auto;
   overflow: hidden;
 }
 .responsive-video iframe {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   border: 0;
+}
+/* === Light/Dark Mode Styles === */
+body.dark-mode {
+  background: #222 !important;
+  color: #fff !important;
+}
+body.dark-mode .main-nav, 
+body.dark-mode footer {
+    background-color: #000000 !important;
+}
+body.dark-mode header,
+body.dark-mode main,
+body.dark-mode #content,
+body.dark-mode #left-column,
+body.dark-mode #right-column {
+  background: transparent !important;
+}
+body.dark-mode .light-dark-mode .light-mode { 
+    cursor: pointer; 
+}
+body.dark-mode .light-dark-mode .dark-mode { 
+    opacity: 1; cursor: pointer; 
+}
+body:not(.dark-mode) .light-dark-mode .light-mode {
+  display: none;
+}
+body.dark-mode .light-dark-mode .light-mode {
+  display: inline;
+}
+body:not(.dark-mode) .light-dark-mode .dark-mode { 
+    cursor: pointer; 
+}
+body.dark-mode h1, 
+body.dark-mode h2,
+body.dark-mode h3, 
+body.dark-mode h4,
+body.dark-mode h5, 
+body.dark-mode h6 {
+    color: #cfab7c !important;
+}
+body.dark-mode h1, 
+body.dark-mode p,
+body.dark-mode a {
+    color: #ffffff !important;
+}
+body.dark-mode a:hover {
+    color: var(--color-secondary) !important;
+}
+body.dark-mode a:active, body.dark-mode a.active {
+    color: var(--color-secondary) !important;
+}
+body.dark-mode header h1,
+body.dark-mode header h3{
+    color: #ffffff !important ;
+}
+body.dark-mode #journal-category a:hover {
+    color: var(--color-text-secondary);
+}
+body.dark-mode .home-hero {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+body.dark-mode #left-column {
+    box-shadow: 8px 0 16px -8px rgba(0, 0, 0, 1) !important;
+}
+body.dark-mode #right-column {
+    box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 1) !important;
+}
+body.dark-mode .categoryname{
+    color:#cfab7c !important;
+}
+/* workout.html */
+body.dark-mode #workout-category a:active {
+    color: #cfab7c;
+}
+body.dark-mode #workout-category a.active {
+    color: #cfab7c;
+}
+/* workout cards and journal cards */
+body.dark-mode .workout-card,
+body.dark-mode .journal-card {
+    border: 0.5pt solid rgb(0, 0, 0);
+    background: #1a1919;
+}
+body.dark-mode .workout-card h4,
+body.dark-mode .journal-card h4 {
+    color:#cfab7c !important;
+}
+body.dark-mode .workout-card-meta,
+body.dark-mode .journal-card-meta {
+    color: #cfab7c;
+}
+body.dark-mode blockquote footer {
+    background-color: transparent !important;
+    color: #cfab7c !important;
+}
+body.dark-mode .workout-card-description, 
+body.dark-mode .journal-card-description {
+    color: #727272 !important;
+}
+body.dark-mode .workout-card-description:hover, 
+body.dark-mode .journal-card-description:hover {
+    color: #ffffff !important;
+}
+body.dark-mode #slide-widget-panel {
+    background: #000000;
+    box-shadow: 4px 0 24px -8px rgba(0,0,0,1);
+}
+body.dark-mode .close-widget {
+    color: #cfab7c;
+}
+body.dark-mode .close-widget:hover {
+    color: #ffffff;
+}
+body.dark-mode .media-icons a img {
+    filter: invert(1);
+}
+/* Override for footer icons: no background on hover */
+body.dark-mode .media-icons a:hover {
+    background-color: transparent !important;
+    opacity: 0.5 !important;
+}
+body.dark-mode #main.journal-entry-main #journal-content {
+    color: var(--color-textz);
+}
+body.dark-mode .light-dark-mode .dark-mode{
+    display: none;
+}
+
+/* === End Light/Dark Mode Styles === */
+a[href="partials/widget.html"] img {
+  transition: filter 0.2s, transform 0.2s;
+}
+a[href="partials/widget.html"]:hover img {
+  filter: brightness(0.7) sepia(1) hue-rotate(25deg) saturate(2);
+  transform: scale(1.15) rotate(-180deg);
+  cursor: pointer;
+}
+body.dark-mode a[href="partials/widget.html"] img {
+  filter: invert(1);
+}
+.light-dark-mode img:hover {
+    transform: scale(1.1) rotate(180deg);
 }

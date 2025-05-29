@@ -15,6 +15,41 @@ window.addEventListener('DOMContentLoaded', function() {
                         headerEl.insertAdjacentHTML('afterbegin', journalNavHtml);
                     });
             }
+            // --- Light/Dark mode logic ---
+            function setMode(mode) {
+                if (mode === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('color-mode', 'dark');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('color-mode', 'light');
+                }
+                // Also add/remove dark-mode class on <main> and <footer>
+                var main = document.querySelector('main');
+                var footer = document.querySelector('footer');
+                if (main) {
+                  if (mode === 'dark') main.classList.add('dark-mode');
+                  else main.classList.remove('dark-mode');
+                }
+                if (footer) {
+                  if (mode === 'dark') footer.classList.add('dark-mode');
+                  else footer.classList.remove('dark-mode');
+                }
+            }
+            // Initial mode from localStorage
+            const saved = localStorage.getItem('color-mode');
+            if (saved === 'dark') setMode('dark');
+            else setMode('light');
+            // Attach event listeners to icons
+            const lightIcon = document.querySelector('.light-dark-mode .light-mode');
+            const darkIcon = document.querySelector('.light-dark-mode .dark-mode');
+            if (lightIcon) {
+                lightIcon.addEventListener('click', function() { setMode('light'); });
+            }
+            if (darkIcon) {
+                darkIcon.addEventListener('click', function() { setMode('dark'); });
+            }
+            // --- End Light/Dark mode logic ---
         })
         .catch(error => console.error('Error loading header:', error));
 });
