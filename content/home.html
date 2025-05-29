@@ -1,6 +1,8 @@
 <div id="home">
     <img class="icons" src="icons/home.svg" alt="home icon">
     <h3>Dirty Shoes, Clear Goals</h3>
+    <h4>Get FREE Printable Journal Today!</h4>
+    <button class="get-journal-btn" id="get-journal">Sign-up Here</button>
     <img src="https://images.unsplash.com/photo-1491864483946-1f06be97b71d?auto=format&fit=crop&w=800&q=80" alt="image">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec facilisis enim erat nec urna. Proin dictum, enim at cursus dictum, urna erat dictum urna, at cursus enim urna at urna. Suspendisse potenti. Etiam euismod, nisi eu tincidunt consectetur, nisi nisl aliquam enim, nec facilisis enim erat nec urna.</p>
     <blockquote>
@@ -8,5 +10,25 @@
         <footer>— Herra</footer>
     </blockquote>
     <img src="images/image.jpg" alt="image">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+</div>
+<!-- Modal Dialog for Get Journal -->
+<div id="journal-modal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" id="close-modal">&times;</span>
+    <h2>Get Your Free Journal</h2>
+    <form id="journal-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="name">Preferred Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="3"></textarea>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div id="thank-you" style="display:none;">
+      <h3>Thank you!</h3>
+      <p>Your request has been received.</p>
+    </div>
+  </div>
 </div>

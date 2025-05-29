@@ -1,179 +1,67 @@
-:root {
-    --color-primary: #000000;
-    --color-secondary: #a47e4d;
-    --color-accent: #b89583;
-    --color-background: #fff;
-    --color-text: #292929;
-    --color-text-secondary: #ffffff;
-}
-html, body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-h1, h2, h3, h4, h5, h6, a {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 400;
-    color: var(--color-primary);
-}
-p {
-    font-family: 'Arial', sans-serif;
-    color: var(--color-text);
-    letter-spacing: 0.25pt;
-    text-align: justify;
-    line-height: 1.6;
-}
-a {
-    text-decoration: none;
-}
-a:hover {
-    color: var(--color-secondary);
-}
-img {
+@media screen and (max-width: 600px) {
+  #journal-category-wrapper {
+    position: relative;
+  }
+  #journal-category-toggle {
+    display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    padding: 2em 0;
-}
-.icons {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: 0 auto;
-    padding: 0;
-}
-/* HEADER */
-.light-dark-mode {
-    padding-right: 2em;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-.light-dark-mode .light-mode {
-    background-color: white;
-    border-radius: 25%;
-}
-
-.light-dark-mode .dark-mode {
-    background-color: #e3c297;
-    border-radius: 25%;
-}
-
-header {
-    display: flex;
+    background: #a47e4d;
+    color: #fff;
+    border: none;
+    padding: 0.25em 0.5em;
+    font-size: 20pt;
+    text-align: left;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+  }
+  #journal-category {
+    display: none;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  #journal-category:not(.collapsed) {
+    display: block;
+  }
+  #journal-category ul {
     flex-direction: column;
-    width: 100%;
-    height: auto;
-}
-.journal-categories {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
-    width: 100%;
-    padding: 1em 0;
-}
-.journal-categories > div:first-child {
-    display: flex;
-    align-items: center;
-    gap: 1.5em;
-}
-.journal-categories div a {
-    padding: 0 1em;
-}
-.journal-categories img {
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-}
-#journal-category ul {
-    display: flex;
-    gap: 1em;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-} 
-#journal-category li {
-    margin: 0;
-    padding: 0;
-}
-#journal-category a {
-    text-decoration: none;
-    background-color: var(--color-secondary);
-    color: white;
-}
-#journal-category a:hover {
-    background-color: transparent;
-    color: var(--color-secondary);
-    text-decoration: overline;
-}
-#heads {
-    display: flex; align-items: center; gap: 1em;
-}
-#heads a {
-    padding-right: 2em;
+    gap: 0;
+    padding: 0.5em 0;
+  }
+  #journal-category li {
+    padding: 0.5em 1em;
+  }
+  .journal-categories {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5em !important;
+  }
+  /* css copy */
+
+#header {
+    display: flex; 
+    flex-direction: column;
 }
 .home-hero {
-    position: relative;
     height: 80vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../images/herra.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
-    background-blend-mode: darken;
-}
-.home-hero img {
-    width: 100%;
-
-    object-fit: cover;
-    display: block;
-}
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    pointer-events: none;
 }
 .hero-text a {
     color: var(--color-background);
-    font-size: 50pt;
-    padding: 0;
-    margin: 0;
+    font-size: 30pt;
 }
 .hero-text h2 {
-    color: var(--color-background);
-    font-size: 20pt;
+    font-size: 18pt;
     padding: 0;
     margin: 0;
-}
-.hero-text h3 {
-    color: var(--color-text-secondary);
-    font-size: 20pt;
-    margin: 0;
-    padding: 0;
 }
 .hero-text p {
-    text-align: center;
-    color: var(--color-background);
-    padding: 2em 0;
-    margin: 0 auto;
-    font-size: 16pt;
-    width: 45%;   
+    font-size: 12pt;
+    width: 85%;   
 }
 .main-nav {
     display: flex;
@@ -887,4 +775,6 @@ body.dark-mode #thank-you {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.5em;
+}
+
 }
