@@ -2,7 +2,7 @@
     {
     "data-id": "health-001",
     "data-category": "Health",
-    "title": "Lorem Ipsum",
+    "title": "Health 1",
     "date-published": "2025-05-27",
     "author": "Herra",
     "meta-description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
@@ -15,5 +15,39 @@
     "image-url": "https://images.unsplash.com/photo-1491864483946-1f06be97b71d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "conclusion": "In conclusion, self-development is a continuous journey that requires dedication and effort. By focusing on personal growth, we can achieve our goals and improve our overall well-being.",
     "related-articles": ["Article 1", "Article 2", "Article 3"]
+  },
+  {
+    "data-id": "health-002",
+    "data-category": "Health",
+    "title": "Health 2",
+    "date-published": "2025-06-01",
+    "author": "John",
+    "meta-description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "meta-keywords": ["exercise", "nutrition", "wellness", "mental health", "fitness"],
+    "meta-image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "video-url": "https://youtu.be/e0YN5C2PaGQ?si=eRvZBZsqzIC8h-Dn",
+    "introduction": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "quote": "Remember, the journey to wellness is a marathon, not a sprint.",
+    "body": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "image-url": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "conclusion": "In conclusion, wellness is a holistic journey that encompasses physical, mental, and emotional health. By prioritizing our well-being, we can lead happier, healthier lives.",
+    "related-articles": ["Article 4", "Article 5", "Article 6"]
+  },
+  {
+    "data-id": "health-003",
+    "data-category": "Health",
+    "title": "Health 3",
+    "date-published": "2025-06-15",
+    "author": "Doe",
+    "meta-description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "meta-keywords": ["yoga", "meditation", "stress relief", "healthy habits", "lifestyle"],
+    "meta-image": "https://images.unsplash.com/photo-1515378791036-1b14b8b1c8b1?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "video-url": "https://youtu.be/e0YN5C2PaGQ?si=eRvZBZsqzIC8h-Dn",
+    "introduction": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "quote": "Inhale the future, exhale the past.",
+    "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image-url": "https://images.unsplash.com/photo-1515378791036-1b14b8b1c8b1?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "conclusion": "In conclusion, adopting healthy habits and practicing stress relief techniques are essential for maintaining a balanced and fulfilling life. By incorporating yoga and meditation into our routine, we can enhance our physical and mental well-being.",
+    "related-articles": ["Article 7", "Article 8", "Article 9"]
   }
 ]

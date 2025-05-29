@@ -40,21 +40,36 @@ window.addEventListener('DOMContentLoaded', function() {
       return;
     }
     container.innerHTML = `<h2>Results for "<strong>${query}</strong>":</h2>
-      <div class="search-cards">${results.map(entry => `
-        <div class="journal-card">
-          <div class="journal-card-image">
-            ${entry['meta-image'] ? `<img src="${entry['meta-image']}" alt="${entry.title || ''}">` : ''}
-          </div>
-          <div class="journal-card-content">
-            <h4>${entry.title || ''}</h4>
-            <p class="journal-card-meta">
-              <span class="journal-card-date">${entry['date-published'] || ''}</span> ― by 
-              <span class="journal-card-author">${entry.author || ''}</span>
-            </p>
-            <p class="journal-card-description">${entry['meta-description'] || ''}</p>
-            <a href="${entry['data-category'] ? (entry['data-category'].toLowerCase() === 'workout' ? 'workout-session.html' : 'journal-entry.html') : 'journal-entry.html'}?id=${encodeURIComponent(entry['data-id'] || entry.id)}" class="view-entry">View</a>
-          </div>
-        </div>
-      `).join('')}</div>`;
+      <div class="search-cards">${results.map(entry => {
+        if (entry.isStatic) {
+          // Static HTML page result
+          return `<div class="journal-card">
+            <div class="journal-card-content">
+              <h4>${entry.title || ''}</h4>
+              <p class="journal-card-description">${entry.description || ''}</p>
+              <a href="${entry.url}" class="view-entry">Go to page</a>
+            </div>
+          </div>`;
+        } else {
+          // Determine if this is a workout or journal entry by category/file
+          const workoutCategories = ['Abs', 'Arm', 'Booty', 'Cardio', 'Full-Body', 'Stretch', 'Thigh'];
+          const isWorkout = workoutCategories.includes(entry.category);
+          const detailPage = isWorkout ? 'workout-session.html' : 'journal-entry.html';
+          return `<div class="journal-card">
+            <div class="journal-card-image">
+              ${entry['meta-image'] ? `<img src="${entry['meta-image']}" alt="${entry.title || ''}">` : ''}
+            </div>
+            <div class="journal-card-content">
+              <h4>${entry.title || ''}</h4>
+              <p class="journal-card-meta">
+                <span class="journal-card-date">${entry['date-published'] || ''}</span> ― by 
+                <span class="journal-card-author">${entry.author || ''}</span>
+              </p>
+              <p class="journal-card-description">${entry['meta-description'] || ''}</p>
+              <a href="${detailPage}?id=${encodeURIComponent(entry['data-id'] || entry.id)}" class="view-entry">View</a>
+            </div>
+          </div>`;
+        }
+      }).join('')}</div>`;
   }
 });
