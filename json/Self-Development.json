@@ -1,5 +1,6 @@
 [
     {
+    "data-id": "selfdev-001",
     "data-category": "Self-Development",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",
@@ -16,6 +17,7 @@
     "related-articles": ["Article 1", "Article 2", "Article 3"]
   },
   {
+    "data-id": "selfdev-002",
     "data-category": "Self-Development",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",

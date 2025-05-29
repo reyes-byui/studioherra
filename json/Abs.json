@@ -1,5 +1,6 @@
 [
   {
+    "data-id": "abs-001",
     "data-category": "Abs",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",
@@ -19,6 +20,7 @@
     "comments": [{}]
   },
   {
+    "data-id": "abs-002",
     "data-category": "Abs",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",

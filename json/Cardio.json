@@ -1,5 +1,6 @@
 [
   {
+    "data-id": "cardio-001",
     "data-category": "Cardio",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",
@@ -19,6 +20,7 @@
     "comments": [{}]
   },
   {
+    "data-id": "cardio-002",
     "data-category": "Cardio",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",
@@ -38,6 +40,7 @@
     "comments": [{}]
   },
   {
+    "data-id": "cardio-003",
     "data-category": "Cardio",
     "title": "Lorem Ipsum",
     "date-published": "2025-05-27",

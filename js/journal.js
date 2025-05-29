@@ -46,11 +46,17 @@ function populateJournalCards(data) {
                     `<p class="journal-card-description">${entry['meta-description'] || ''}</p>` +
                 '</div>';
             card.style.cursor = 'pointer';
+            card.setAttribute('data-id', entry['data-id'] || entry.id || '');
             card.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Save all entry details to sessionStorage
-                sessionStorage.setItem('journalEntryDetails', JSON.stringify(entry));
-                window.open('journal-entry.html', '_blank');
+                // Redirect to journal-entry.html with data-id in the URL
+                if (entry['data-id']) {
+                    window.location.href = `journal-entry.html?id=${encodeURIComponent(entry['data-id'])}`;
+                } else if (entry.id) {
+                    window.location.href = `journal-entry.html?id=${encodeURIComponent(entry.id)}`;
+                } else {
+                    window.location.href = 'journal-entry.html';
+                }
             });
             cardsContainer.appendChild(card);
         });
