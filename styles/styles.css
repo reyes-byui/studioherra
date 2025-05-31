@@ -61,7 +61,19 @@ img {
     background-color: #e3c297;
     border-radius: 25%;
 }
-
+.column-title button {
+    background-color: #a47e4d;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: none;
+}
+.column-title button a {
+    color: white;
+}
+.column-title button:hover {
+    background-color: #a47e4d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
 header {
     display: flex;
     flex-direction: column;
@@ -208,6 +220,9 @@ header {
     transition: background 0.2s, color 0.2s;
     color: var(--color-secondary);
 }
+#journal-category-toggle {
+    display: none;
+}
 
 .main-nav ul {
     display: flex;
@@ -292,6 +307,7 @@ header {
   position: relative;
   animation: fadeIn 0.3s;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -324,7 +340,7 @@ header {
 #journal-form .submit-btn {
   margin-top: 18px;
   width: 100%;
-  background: #222;
+  background: #a47e4d;
   color: #fff;
   border: none;
   padding: 10px 0;
@@ -387,6 +403,7 @@ header {
     align-items: center;
     align-content: center;
 }
+
 #search-results p {
     text-align: center;
 }

@@ -1,25 +1,62 @@
 // Toggle journal-category menu for mobile
 (function() {
+  var lastHandler = null;
+  var lastToggleBtn = null;
+  var lastCatDiv = null;
+  var resizeHandlerSet = false;
+  var outsideClickHandler = null;
+
+  function checkMobile(catDiv, toggleBtn) {
+    if (window.innerWidth <= 768) {
+      catDiv.classList.add('collapsed');
+      toggleBtn.style.display = 'block';
+    } else {
+      catDiv.classList.remove('collapsed');
+      toggleBtn.style.display = 'none';
+    }
+  }
+
+  function closeMenuOnOutsideClick(catDiv, toggleBtn) {
+    if (outsideClickHandler) document.removeEventListener('mousedown', outsideClickHandler);
+    outsideClickHandler = function(e) {
+      if (!catDiv.classList.contains('collapsed')) {
+        if (!catDiv.contains(e.target) && !toggleBtn.contains(e.target)) {
+          catDiv.classList.add('collapsed');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    };
+    document.addEventListener('mousedown', outsideClickHandler);
+  }
+
   function toggleJournalCategory() {
     var toggleBtn = document.getElementById('journal-category-toggle');
     var catDiv = document.getElementById('journal-category');
     if (!toggleBtn || !catDiv) return;
-    toggleBtn.addEventListener('click', function() {
-      var isCollapsed = catDiv.classList.toggle('collapsed');
-      toggleBtn.setAttribute('aria-expanded', !isCollapsed);
-    });
-    // By default, collapse on mobile
-    function checkMobile() {
-      if (window.innerWidth <= 600) {
-        catDiv.classList.add('collapsed');
-        toggleBtn.style.display = 'block';
-      } else {
-        catDiv.classList.remove('collapsed');
-        toggleBtn.style.display = 'none';
+    // Remove previous click handler if any
+    if (lastToggleBtn && lastHandler) lastToggleBtn.removeEventListener('click', lastHandler);
+    lastHandler = function(e) {
+      catDiv.classList.toggle('collapsed');
+      var expanded = !catDiv.classList.contains('collapsed');
+      toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      if (expanded) {
+        closeMenuOnOutsideClick(catDiv, toggleBtn);
       }
+    };
+    toggleBtn.addEventListener('click', lastHandler);
+    lastToggleBtn = toggleBtn;
+    lastCatDiv = catDiv;
+    checkMobile(catDiv, toggleBtn);
+    if (!resizeHandlerSet) {
+      window.addEventListener('resize', function() {
+        // Always re-query in case DOM changed
+        var btn = document.getElementById('journal-category-toggle');
+        var div = document.getElementById('journal-category');
+        if (btn && div) checkMobile(div, btn);
+      });
+      resizeHandlerSet = true;
     }
-    window.addEventListener('resize', checkMobile);
-    checkMobile();
+    closeMenuOnOutsideClick(catDiv, toggleBtn);
   }
   document.addEventListener('DOMContentLoaded', toggleJournalCategory);
   document.addEventListener('content:updated', toggleJournalCategory);

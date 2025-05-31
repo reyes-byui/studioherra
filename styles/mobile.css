@@ -1,118 +1,151 @@
-@media screen and (max-width: 600px) {
-  #journal-category-wrapper {
-    position: relative;
+@media screen and (max-width: 768px) {
+html, body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE and Edge */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;              /* Chrome, Safari, Opera */
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+p {
+    font-size: 11pt;
+}
+
+.journal-categories {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    padding: 1em;
+}
+
+  .journal-categories > div > a[href="index.html"] {
+    font-size: 24pt;
   }
-  #journal-category-toggle {
+ 
+.journal-categories > div:first-child {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+#journal-category-wrapper button {
+    background-color: #cfab7c;
+    border-radius: 5px; 
+    border: none;
+    padding: 0.5em 0.75em;
+    font-size: 12pt;
+    color: white;
+    font-family: 'Shippori Mincho', sans-serif;   
+}
+#journal-category-wrapper button:hover {
+    background-color: #a47e4d;
+}
+#journal-category-toggle {
+    display: inline-block;
+}
+
+#journal-category.collapsed {
+    display: none !important;
+}
+#journal-category {
+    display: block;
+    width: 50%;
+    position: fixed;
+    right: 0;
+    background: transparent;
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+    margin-top: 0.5em;
+}   
+#journal-category ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em 1.5em;
+    margin: 0;
+    text-align: center;
+    align-items: stretch;
+} 
+#journal-category ul li {
+    width: 100%;
+    box-sizing: border-box;
+}
+#journal-category ul li a {
     display: block;
     width: 100%;
-    background: #a47e4d;
-    color: #fff;
-    border: none;
-    padding: 0.25em 0.5em;
-    font-size: 20pt;
-    text-align: left;
+    box-sizing: border-box;
+}
+#journal-category a {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    padding: 0.5em;
+    border: 2pt solid #ffffff;
     border-radius: 5px;
-    margin-bottom: 0.5em;
-    cursor: pointer;
-  }
-  #journal-category {
-    display: none;
-    background: #fff;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 100;
-  }
-  #journal-category:not(.collapsed) {
-    display: block;
-  }
-  #journal-category ul {
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5em 0;
-  }
-  #journal-category li {
-    padding: 0.5em 1em;
-  }
-  .journal-categories {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.5em !important;
-  }
-  /* css copy */
-
+}
+#journal-category a:hover {
+    background: #ffffff;
+}
 #header {
     display: flex; 
-    flex-direction: column;
+    align-items: center;
 }
 .home-hero {
-    height: 80vh;
+    height: 60vh;
+    width: 100%;
 }
+
 .hero-text a {
-    color: var(--color-background);
-    font-size: 30pt;
+    font-size: 35pt;
+    word-break: break-word;
+    max-width: 100vw;
+    overflow-wrap: break-word;
+    display: inline-block;
 }
-.hero-text h2 {
-    font-size: 18pt;
-    padding: 0;
-    margin: 0;
+.hero-text h3 {
+    font-size: 14pt;
 }
 .hero-text p {
     font-size: 12pt;
-    width: 85%;   
+    width: 60%;
 }
-.main-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: var(--color-background);
-    padding: 1em 2em 1em 2em;
-    box-shadow: 0 12px 32px -4px rgba(0,0,0,0.05);
-    z-index: 1;
-}
-.main-menu nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+#main-menu {
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 0;
     width: 100%;
+
 }
-.main-nav li {
-    list-style: none;
+.main-nav ul {
     padding: 0;
     margin: 0;
 }
 .main-nav a {
-    text-decoration: none;
-    font-size: 18pt;
+    font-size: 13pt;
 }
-.main-nav a:active, .main-nav a.active {
-    text-decoration: overline;
-    transition: background 0.2s, color 0.2s;
-    color: var(--color-secondary);
+#main-nav, .main-nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-sizing: border-box;
 }
-
+body {
+padding-top: 60px;
+}
 .main-nav ul {
-    display: flex;
-    flex-direction: row;
     column-gap: 2em;
-    list-style: none;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
+    left: 0;
 }
-.journal-categories img {
-    width: 30px;
-    height: 30px;
-}
-/* HEADER ENDS HERE */
 /* MAIN BODY */
 #home {
     align-items: center;
@@ -128,288 +161,100 @@
 #shop h3,
 #workout h3{
     text-align: center;
-    font-size: 18pt;
+    font-size: 16pt;
 }
 /* Modal Styles */
-.get-journal-btn {
-    background-color: white;
-    border: 1pt solid #a47e4d;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    margin: 1.5em auto;
-    display: block;
-}
-.get-journal-btn:hover {
-    background-color: #a47e4d;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-}
 #home h4 {
-    font-size: 16pt;
-    color: var(--color-secondary);
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    font-weight: 700;
-    text-decoration: underline;
+    font-size: 18pt;
 }
 #home button {
-    font-size: 16pt;
-    font-family: 'shippori mincho', serif;
-    margin: 0;
+    font-size: 15pt;
 }
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
+
 .modal-content {
-  background-color: #fff;
-  margin: 8% auto;
-  padding: 30px 24px 24px 24px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-  position: relative;
-  animation: fadeIn 0.3s;
+  padding: 1em;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.close {
-  color: #aaa;
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.close:hover { color: #333; }
-#journal-form label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 500;
+.modal-content h2 {
+    text-align: center;
 }
 #journal-form input, #journal-form textarea {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-  box-sizing: border-box;
+  font-size: 11pt;
 }
 #journal-form .submit-btn {
-  margin-top: 18px;
-  width: 100%;
-  background: #222;
-  color: #fff;
-  border: none;
-  padding: 10px 0;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background 0.2s;
+  font-size: 15pt;
 }
 #journal-form .submit-btn:hover {
   background: #444;
 }
-#thank-you {
-  text-align: center;
-  padding: 30px 0 10px 0;
-}
 #main {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    height: 100vh
+    height: auto;
 }
 #left-column, #right-column {
     display: flex;
     flex-direction: column;
-    flex: 1 1 25%;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: auto;
+    overflow-y: none;
+    overflow-x: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
 } 
-.column-title h2, p{
-    padding: 0.5em 0;
-    margin: 0;
-    text-align: left;
-}
-#left-column div, #right-column div {
-    padding: 2em;
-}
-#left-column::-webkit-scrollbar,
-#right-column::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-#left-column {
-    box-shadow: 8px 0 16px -8px rgba(0, 0, 0, 0.05);
-}
-#right-column {
-    box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 0.05);
-}
 /* MAIN CONTENT */
-#content, #workout-page, #search-results {
-    width: 60%;
-    padding: 3.5em;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
+#content, #workout-page, #search-results, #journal-content {
+    padding: 2em;
+    width: 100% !important;
+    box-sizing: border-box;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+#search-results {
+    margin: 0 auto;   
 }
 #search-results p {
     text-align: center;
 }
 blockquote {
     padding: 1em;
-    border-left: #a47e4d 5pt solid;
-    color: var(--color-secondary);
-    width: 80%;
-    font-size: 18pt;
+    width: 90%;
+    font-size: 16pt;
     margin: 0 auto;
-    text-align: left;
 }
-blockquote p {
-    font-family: 'Shippori Mincho', serif;
-    text-align: left;
-}
-blockquote footer {
-    font-style: italic;
-}
-/* journal.html */
-.categoryname{
-    font-size: 12pt;
-    color:#a47e4d;
-    opacity: 0.5;
-}
-
 /* workout.html */
 #workout-category ul {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 1em 0;
-    margin: 0;
-    list-style: none;
+    justify-content: flex-start;
+    gap: 1em;
 }
-#workout-category li {
-    list-style: none;
-}
-#workout-category a {
-    font-family: 'Arial', sans-serif;
-    font-size: small;
-    transition: color 0.2s, text-decoration 0.2s;
-}
-#workout-category a:active {
-    text-decoration: overline;
-    color: var(--color-secondary);
-}
-#workout-category a.active {
-    text-decoration: overline;
-    color: var(--color-secondary);
-}
-
 /* workout cards and journal cards */
 #workout-cards, #journal-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2em;
-    justify-items: center;
-    align-items: stretch;
-    margin-top: 2em;
-    text-align: left;
-    padding: 2em 0;
+    margin-top: 1em;
 }
 .workout-card, .journal-card {
-    border: 0.5pt solid rgb(143, 143, 143);
-    padding: 1em;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 320px;
-    box-sizing: border-box;
-    transition: border-color 0.2s;
+    max-width: 100%;
 }
 .workout-card img, .journal-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 0.5em;
+    height: 250px;
 }
 .workout-card h4, .journal-card h4 {
-    margin: 0.5em 0 0.25em 0;
-    font-size: 20pt;
-    color: var(--color-primary);
-    text-align: center;
+    margin: 0;
+    font-size: 18pt;
 }
 .workout-card-meta, .journal-card-meta {
-    font-size: 0.95em;
-    color: #888;
-    margin-bottom: 0.5em;
-    text-align: center;
+    font-size: 12pt;
 }
 .workout-card-description, .journal-card-description {
-    font-size: 1em;
-    color: var(--color-text);
-    text-align: center;
+    font-size: 12pt;
 }
 /* end of workout.html */
 /* widget */
-#widget {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1em;
-    justify-content: space-between;
-}
-#widget .column-title {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#widget .column-title h2 {
-    margin: 0;
-    text-align: center;
-    width: 100%;
-}
 /* SLIDE WIDGET PANEL */
 #slide-widget-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 350px;
-    max-width: 90vw;
-    height: 100vh;
-    background: #fff;
-    box-shadow: 4px 0 24px -8px rgba(0,0,0,0.18);
-    z-index: 9999;
-    transform: translateX(-100%);
-    transition: transform 0.35s cubic-bezier(.77,0,.18,1);
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 }
 #slide-widget-panel.open {
     transform: translateX(0);
@@ -422,296 +267,46 @@ blockquote footer {
     -ms-overflow-style: none;  /* IE and Edge */
 }
 .slide-widget-content::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-.close-widget {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    background: none;
-    border: none;
-    font-size: 2em;
-    color: #888;
-    cursor: pointer;
-    z-index: 10001;
-    transition: color 0.2s;
-}
-.close-widget:hover {
-    color: var(--color-secondary);
+    display: none;
 }
 /* MAIN CONTENT ENDS HERE */
 /* FOOTER */
-#footer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    box-shadow: 0 -8px 32px -4px rgba(0,0,0,0.05);
-    background: var(--color-background);
-    z-index: 10;
-    padding: 0;
-    margin: 0;
-}
-.footer-links {
-    padding: 0;
-    margin: 0;
-}
 #copyright {
-    padding: 1em;
-    margin: 0;
-    font-family: 'Shippori Mincho', serif;
+    font-size: 12pt;
 }
 .media-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 1em;
-    margin: 0;
-    column-gap: 1.5em;
-}
-.media-icons a img {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    margin: 0;
-}
-/* Override for footer icons: no background on hover */
-.media-icons a:hover {
-    background-color: transparent !important;
-    opacity: 0.5 !important;
+    column-gap: 1em;
 }
 /* FOOTER ENDS HERE */
 /* journal-entry.html specific main layout */
 #main.journal-entry-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin: 0 auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+    width: 90%;
+    margin: 1em auto;
+    overflow-y: none;
+    overflow-x: none;
     scrollbar-width: none;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
 }
 #main.journal-entry-main #journal-content {
     display: flex;
     flex-direction: column;
     color: var(--color-text);
     width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 #main.journal-entry-main #content {
-    width: 100%;
-    min-height: 200px;
-    overflow: visible;
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 0;
-}
-.responsive-video {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: auto;
-  overflow: hidden;
-}
-.responsive-video iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 110%;
-  border: 0;
-}
-/* === Light/Dark Mode Styles === */
-body.dark-mode {
-  background: #222 !important;
-  color: #fff !important;
-}
-body.dark-mode .main-nav, 
-body.dark-mode footer {
-    background-color: #000000 !important;
-}
-body.dark-mode header,
-body.dark-mode main,
-body.dark-mode #content,
-body.dark-mode #left-column,
-body.dark-mode #right-column {
-  background: transparent !important;
-}
-body.dark-mode .light-dark-mode .light-mode { 
-    cursor: pointer; 
-}
-body.dark-mode .light-dark-mode .dark-mode { 
-    opacity: 1; cursor: pointer; 
-}
-body:not(.dark-mode) .light-dark-mode .light-mode {
-  display: none;
-}
-body.dark-mode .light-dark-mode .light-mode {
-  display: inline;
-}
-body:not(.dark-mode) .light-dark-mode .dark-mode { 
-    cursor: pointer; 
-}
-body.dark-mode h1, 
-body.dark-mode h2,
-body.dark-mode h3, 
-body.dark-mode h4,
-body.dark-mode h5, 
-body.dark-mode h6 {
-    color: #cfab7c !important;
-}
-body.dark-mode h1, 
-body.dark-mode p,
-body.dark-mode a {
-    color: #ffffff !important;
-}
-body.dark-mode a:hover {
-    color: var(--color-secondary) !important;
-}
-body.dark-mode a:active, body.dark-mode a.active {
-    color: var(--color-secondary) !important;
-}
-body.dark-mode header h1,
-body.dark-mode header h3{
-    color: #ffffff !important ;
-}
-body.dark-mode #journal-category a:hover {
-    color: var(--color-text-secondary);
-}
-body.dark-mode .home-hero {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-}
-body.dark-mode #left-column {
-    box-shadow: 8px 0 16px -8px rgba(0, 0, 0, 1) !important;
-}
-body.dark-mode #right-column {
-    box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 1) !important;
-}
-body.dark-mode .categoryname{
-    color:#cfab7c !important;
-}
-/* workout.html */
-body.dark-mode #workout-category a:active {
-    color: #cfab7c;
-}
-body.dark-mode #workout-category a.active {
-    color: #cfab7c;
-}
-/* workout cards and journal cards */
-body.dark-mode .workout-card,
-body.dark-mode .journal-card {
-    border: 0.5pt solid rgb(0, 0, 0);
-    background: #1a1919;
-}
-body.dark-mode .workout-card h4,
-body.dark-mode .journal-card h4 {
-    color:#cfab7c !important;
-}
-body.dark-mode .workout-card-meta,
-body.dark-mode .journal-card-meta {
-    color: #cfab7c;
-}
-body.dark-mode blockquote footer {
-    background-color: transparent !important;
-    color: #cfab7c !important;
-}
-body.dark-mode .workout-card-description, 
-body.dark-mode .journal-card-description {
-    color: #727272 !important;
-}
-body.dark-mode .workout-card-description:hover, 
-body.dark-mode .journal-card-description:hover {
-    color: #ffffff !important;
-}
-body.dark-mode #slide-widget-panel {
-    background: #000000;
-    box-shadow: 4px 0 24px -8px rgba(0,0,0,1);
-}
-body.dark-mode .close-widget {
-    color: #cfab7c;
-}
-body.dark-mode .close-widget:hover {
-    color: #ffffff;
-}
-body.dark-mode .media-icons a img {
-    filter: invert(1);
-}
-/* Override for footer icons: no background on hover */
-body.dark-mode .media-icons a:hover {
-    background-color: transparent !important;
-    opacity: 0.5 !important;
-}
-body.dark-mode #main.journal-entry-main #journal-content {
-    color: var(--color-textz);
-}
-body.dark-mode .light-dark-mode .dark-mode{
-    display: none;
+    min-height: auto;
+    overflow: none;
 }
 
-/* === End Light/Dark Mode Styles === */
-a[href="partials/widget.html"] img {
-  transition: filter 0.2s, transform 0.2s;
-}
-a[href="partials/widget.html"]:hover img {
-  filter: brightness(0.7) sepia(1) hue-rotate(25deg) saturate(2);
-  transform: scale(1.15) rotate(-180deg);
-  cursor: pointer;
-}
-body.dark-mode a[href="partials/widget.html"] img {
-  filter: invert(1);
-}
-.light-dark-mode img:hover {
-    transform: scale(1.1) rotate(180deg);
-}
-/* Modal Styles */
-body.dark-mode .get-journal-btn {
-    background-color: transparent;
-    border: 1pt solid white  !important;
-    color: white ;
-}
-body.dark-mode .get-journal-btn:hover {
-    background-color: white !important;
-    color: #222 !important;
-    cursor: pointer;
-}
-body.dark-mode #home h4 {
-    color: white !important;
-}
-body.dark-mode .modal-content {
-  background-color:#000000;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
-  border: 0.5pt solid #a47e4d;
-}
-body.dark-mode .close {
-  color: #aaa;
-}
-body.dark-mode .close:hover { color:#a47e4d; }
-body.dark-mode #journal-form label {
-  color: white;
-}
-body.dark-mode #journal-form input,
-body.dark-mode #journal-form textarea {
-  border: 1px solid #a47e4d;
-}
-body.dark-mode #journal-form .submit-btn {
-  background: #a47e4d;
-  color: #fff;
-}
-body.dark-mode #journal-form .submit-btn:hover {
-  background: #474747;
-}
-
-body.dark-mode #thank-you {
-  text-align: center;
-  padding: 30px 0 10px 0;
-}
 /* search bar */
 .header-search {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 1.5em;
 }
 .header-search input[type="text"] {
   padding: 0.5em 1em;
@@ -776,5 +371,37 @@ body.dark-mode #thank-you {
   border-radius: 8px;
   margin-bottom: 0.5em;
 }
-
+.light-dark-mode {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+    z-index: 3000;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 0.5em 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: background 0.2s;
+  }
+  body.dark-mode .light-dark-mode {
+    background: rgba(34,34,34,0.85);
+  }
+  #main {
+    display: flex;
+    flex-direction: column;
+  }
+  #content {
+    order: 1;
+  }
+  #left-column {
+    order: 2;
+  }
+  #right-column {
+    order: 3;
+  }
+  .responsive-video iframe {
+    z-index: -20;
+  }
 }

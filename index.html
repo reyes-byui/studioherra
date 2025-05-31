@@ -26,6 +26,26 @@
                 <!-- Right column content will be loaded here -->
             </section>
         </main>
+         <!-- Modal Dialog for Get Journal -->
+        <div id="journal-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Get Your Free Journal</h2>
+            <form id="journal-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="name">Preferred Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div id="thank-you" style="display:none;">
+            <h3>Thank you!</h3>
+            <p>Your request has been received.</p>
+            </div>
+        </div>
+        </div>
         <footer id="footer"></footer>
         <script src="js/header.js"></script>
         <script src="js/footer.js"></script>
@@ -36,5 +56,6 @@
         <script src="js/workout.js"></script>
         <script src="js/journal.js"></script>
         <script src="js/get-journal-modal.js"></script>
+        <script src="js/journal-category-toggle.js"></script>
     </body>
 </html>
