@@ -71,8 +71,9 @@ img {
     color: white;
 }
 .column-title button:hover {
-    background-color: #a47e4d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #cfab7c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background-color: #292929;
 }
 header {
     display: flex;
