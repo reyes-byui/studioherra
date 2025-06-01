@@ -741,7 +741,7 @@ blockquote footer {
 .responsive-video {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding: 2em 0; /* 16:9 aspect ratio */
   height: auto;
   overflow: hidden;
 }
