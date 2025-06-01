@@ -5,7 +5,7 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const app = express();
-const PORT = 3000; // or any port you prefer
+const PORT = process.env.PORT || 3000; // or any port you prefer
 
 // Use MongoDB connection string from .env
 const MONGO_URI = process.env.MONGO_URI;
@@ -21,7 +21,7 @@ MongoClient.connect(MONGO_URI, { useUnifiedTopology: true })
   .then(client => {
     db = client.db('blog');
     freejournalCollection = db.collection('freejournal');
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`Server running on http://localhost:${PORT}`);
     });
   })
