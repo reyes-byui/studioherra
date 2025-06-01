@@ -25,15 +25,38 @@
           document.body.style.overflow = '';
         }
       };
-      form.onsubmit = function(e) {
+      form.onsubmit = async function(e) {
         e.preventDefault();
-        form.style.display = 'none';
-        thankYou.style.display = 'block';
-        setTimeout(function() {
-          modal.style.display = 'none';
-          document.body.style.overflow = '';
-        }, 2000);
-        form.reset();
+        // Send form data to backend
+        const payload = {
+          email: form.email.value,
+          name: form.name.value,
+          message: form.message.value
+        };
+        try {
+          const resp = await fetch('/api/freejournal', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (resp.ok) {
+            form.style.display = 'none';
+            thankYou.style.display = 'block';
+            setTimeout(function() {
+              modal.style.display = 'none';
+              document.body.style.overflow = '';
+            }, 2000);
+            form.reset();
+          } else {
+            // Log error details for debugging
+            let errorMsg = await resp.text();
+            console.error('Submission failed:', resp.status, errorMsg);
+            alert('Failed to submit. Please try again.');
+          }
+        } catch (err) {
+          console.error('Network or JS error:', err);
+          alert('Failed to submit. Please try again.');
+        }
       };
     }
   }
