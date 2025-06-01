@@ -936,6 +936,29 @@ body.dark-mode #thank-you {
   text-align: center;
   padding: 30px 0 10px 0;
 }
+/* feedback night mode */
+body.dark-mode #feedback-form label {
+  color: #cfab7c;
+}
+body.dark-mode #feedback-form input[type="text"],
+body.dark-mode #feedback-form textarea {
+  border: 1px solid #cfab7c;
+  background: #474747;
+  color: white;
+}
+body.dark-mode #feedback-form input[type="text"]:focus,
+body.dark-mode #feedback-form textarea:focus {
+  border: 1.5px solid #cfab7c;
+}
+body.dark-mode .feedback-comment {
+  background: #222;
+  color: #aaa;
+}
+body.dark-mode .feedback-date {
+  color: #e3c297;
+}
+
+
 /* search bar */
 .header-search {
   display: flex;

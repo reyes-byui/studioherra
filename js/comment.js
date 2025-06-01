@@ -43,7 +43,12 @@
           data.forEach(function(fb) {
             var commentDiv = document.createElement('div');
             commentDiv.className = 'feedback-comment';
-            var dateStr = fb.date ? `<span class="feedback-date">${escapeHtml(fb.date)}</span>` : '';
+            // Format date string in Mountain Time (America/Denver)
+            var dateStr = '';
+            if (fb.date) {
+              var dateObj = new Date(fb.date);
+              dateStr = `<span class="feedback-date">${dateObj.toLocaleString('en-US', { timeZone: 'America/Denver', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })} MT</span>`;
+            }
             commentDiv.innerHTML = `<strong>${escapeHtml(fb.name)}:</strong> ${escapeHtml(fb.text)} ${dateStr}`;
             feedbackList.appendChild(commentDiv);
           });

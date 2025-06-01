@@ -183,9 +183,6 @@ padding-top: 60px;
 #journal-form .submit-btn {
   font-size: 15pt;
 }
-#journal-form .submit-btn:hover {
-  background: #444;
-}
 #main {
     flex-direction: column;
     width: 100%;
