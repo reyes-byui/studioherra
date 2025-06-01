@@ -902,8 +902,8 @@ body.dark-mode .get-journal-btn {
     color: white ;
 }
 body.dark-mode .get-journal-btn:hover {
-    background-color: white !important;
-    color: #222 !important;
+    background-color: #a47e4d !important;
+    color: #ffffff !important;
     cursor: pointer;
 }
 body.dark-mode #home h4 {
