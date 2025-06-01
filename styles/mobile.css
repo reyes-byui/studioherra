@@ -164,11 +164,11 @@ padding-top: 60px;
     font-size: 16pt;
 }
 /* Modal Styles */
-#home h4 {
-    font-size: 18pt;
+#freejournal h4 {
+    font-size: 16pt;
 }
-#home button {
-    font-size: 15pt;
+#freejournal button {
+    font-size: 13pt;
 }
 
 .modal-content {

@@ -272,7 +272,11 @@ header {
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
 }
-#home h4 {
+#freejournal {
+    padding: 2em;
+    margin: 0 auto;
+}
+#freejournal h4 {
     font-size: 16pt;
     color: var(--color-secondary);
     text-align: center;
@@ -280,10 +284,10 @@ header {
     font-weight: 700;
     text-decoration: underline;
 }
-#home button {
+#freejournal button {
     font-size: 16pt;
     font-family: 'shippori mincho', serif;
-    margin: 0;
+    margin: 0 auto;
 }
 .modal {
   display: none; /* Hidden by default */
