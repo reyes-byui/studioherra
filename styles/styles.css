@@ -952,8 +952,8 @@ body.dark-mode #feedback-form textarea:focus {
   border: 1.5px solid #cfab7c;
 }
 body.dark-mode .feedback-comment {
-  background: #222;
-  color: #aaa;
+  background: #000000;
+  color: #ffffff;
 }
 body.dark-mode .feedback-date {
   color: #e3c297;
