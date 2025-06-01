@@ -265,6 +265,7 @@ header {
     border-radius: 5px;
     margin: 1.5em auto;
     display: block;
+    color: #a47e4d;
 }
 .get-journal-btn:hover {
     background-color: #a47e4d;
