@@ -413,12 +413,19 @@ header {
   padding: 0;
   margin: 0 auto;
 }
-#comment h2 {
+#comment h2{
   font-size: 20pt;
   font-family: 'Arial', sans-serif;
   padding: 1em 0;
   text-align: center;
   font-weight: 600;
+}
+#comment h4 {
+    font-size: 20pt;
+    left: 0;
+    padding: 1em 0;
+    text-align: left;
+    font-weight: 600;
 }
 #feedback-form {
   display: flex;
