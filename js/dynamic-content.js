@@ -22,12 +22,14 @@ window.addEventListener('DOMContentLoaded', function() {
     function loadContentByHash() {
         const hash = window.location.hash || '#home';
         let url = '';
-        if (hash === '#home') url = 'content/home.html';
-        else if (hash === '#workout') url = 'content/workout.html';
-        else if (hash === '#journal') url = 'content/journal.html';
-        else if (hash === '#shop') url = 'content/shop.html';
-        else if (hash === '#about') url = 'content/about.html';
-        else url = 'content/home.html';
+        switch (hash) {
+            case '#home': url = 'content/home.html'; break;
+            case '#workout': url = 'content/workout.html'; break;
+            case '#journal': url = 'content/journal.html'; break;
+            case '#shop': url = 'content/shop.html'; break;
+            case '#about': url = 'content/about.html'; break;
+            default: url = 'content/home.html'; break;
+        }
         const contentSection = document.getElementById('content');
         if (!contentSection) {
             console.error('No #content element found in DOM!');

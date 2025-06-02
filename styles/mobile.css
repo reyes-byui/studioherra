@@ -17,6 +17,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 p {
     font-size: 11pt;
 }
+img {
+    aspect-ratio: 5 / 4;
+}
 
 .journal-categories {
     display: flex;
@@ -26,7 +29,7 @@ p {
 }
 
   .journal-categories > div > a[href="index.html"] {
-    font-size: 18pt;
+    font-size: 13pt;
   }
  
 .journal-categories > div:first-child {
@@ -104,7 +107,7 @@ p {
 }
 
 .hero-text a {
-    font-size: 35pt;
+    font-size: 30pt;
     word-break: break-word;
     max-width: 100vw;
     overflow-wrap: break-word;
@@ -115,21 +118,21 @@ p {
 }
 .hero-text p {
     font-size: 12pt;
-    width: 60%;
+    width: 70%;
 }
 #main-menu {
     flex-direction: column !important;
     position: fixed !important;
     top: 0;
     width: 100%;
-
+    padding: 0 0.5em;
 }
 .main-nav ul {
     padding: 0;
     margin: 0;
 }
 .main-nav a {
-    font-size: 13pt;
+    font-size: 10pt;
 }
 #main-nav, .main-nav {
     position: fixed;
@@ -199,16 +202,16 @@ padding-top: 60px;
 } 
 /* MAIN CONTENT */
 #content, #workout-page, #search-results, #journal-content {
-    padding: 2em;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    padding: 2em; 
     width: 100% !important;
     box-sizing: border-box;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    margin: 0 auto !important;
 }
 #search-results {
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 #search-results p {
     text-align: center;
@@ -216,7 +219,7 @@ padding-top: 60px;
 blockquote {
     padding: 1em;
     width: 90%;
-    font-size: 16pt;
+    font-size: 18pt;
     margin: 0 auto;
 }
 /* workout.html */
@@ -229,7 +232,12 @@ blockquote {
 }
 /* workout cards and journal cards */
 #workout-cards, #journal-cards {
-    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center
 }
 .workout-card, .journal-card {
     max-width: 100%;
@@ -303,7 +311,7 @@ blockquote {
 .header-search {
   display: flex;
   align-items: center;
-  gap: 1.5em;
+  gap: 0.15em;
 }
 .header-search input[type="text"] {
   padding: 0.5em 1em;
@@ -398,7 +406,14 @@ blockquote {
   #right-column {
     order: 3;
   }
-  .responsive-video iframe {
-    z-index: -20;
-  }
+.responsive-video {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.responsive-video iframe {
+  width: 100%;
+  height: auto !important;
+  z-index: -20; /* Fix: allow interaction, bring above overlays */
+  position: relative; /* Ensure stacking context */
+}
 }

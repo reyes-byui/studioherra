@@ -25,6 +25,7 @@ p {
 }
 a {
     text-decoration: none;
+    padding: 0.2em;
 }
 a:hover {
     color: var(--color-secondary);
@@ -260,21 +261,53 @@ header {
 }
 /* Modal Styles */
 .get-journal-btn {
-    background-color: white;
-    border: 1pt solid #a47e4d;
-    padding: 0.5em 1em;
+    background-color: #685030;
+    border: 1pt solid #685030;
+    padding: 0.2em 0.3em;
     border-radius: 5px;
     margin: 1.5em auto;
     display: block;
-    color: #a47e4d;
+    color: white;
+}
+#inquire {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.inquire-btn {
+    background-color: #e3c297;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75em;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 100;
+    text-align: center;
+    color: #222;
+    font-family: 'Shippori Mincho', serif;
+}
+.inquire-btn img {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    display: inline-block;
+}
+.inquire-btn:hover {
+    background-color: #cfab7c;
+    color: white;
 }
 .get-journal-btn:hover {
-    background-color: #a47e4d;
+    background-color: #cfab7c;
+    border: 1pt solid #cfab7c;
     color: white;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
+    box-shadow: 4px 0 24px -8px rgba(0,0,0,0.18);
 }
-#freejournal {
+#freejournal{
     padding: 2em;
     margin: 0 auto;
 }
@@ -329,13 +362,13 @@ header {
   transition: color 0.2s;
 }
 .close:hover { color: #333; }
-#journal-form label {
+#journal-form label, #inquire-form label {
   display: block;
   margin-top: 12px;
   font-weight: 500;
   font-family: "Arial", sans-serif;
 }
-#journal-form input, #journal-form textarea {
+#journal-form input, #journal-form textarea, #inquiry-form input, #inquire-form textarea, #inqiury-form input, #inqiury-form textarea {
   width: 100%;
   padding: 8px 10px;
   margin-top: 4px;
@@ -345,7 +378,7 @@ header {
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
 }
-#journal-form .submit-btn {
+#journal-form .submit-btn, #inquire-form .submit-btn, #inqiury-form .submit-btn {
   margin-top: 18px;
   width: 100%;
   background: #a47e4d;
@@ -358,7 +391,7 @@ header {
   transition: background 0.2s;
   font-family: "Arial", sans-serif;
 }
-#journal-form .submit-btn:hover {
+#journal-form .submit-btn:hover, #inquire-form .submit-btn:hover, #inqiury-form .submit-btn:hover {
   background: #444;
 }
 #thank-you {
@@ -380,7 +413,6 @@ header {
   border-radius: 10px;
   padding: 0;
   margin: 0 auto;
-  width: 100%;
 }
 #comment h2 {
   font-size: 20pt;
@@ -493,7 +525,7 @@ header {
     box-shadow: -8px 0 16px -8px rgba(0, 0, 0, 0.05);
 }
 /* MAIN CONTENT */
-#content, #workout-page, #search-results {
+#content, #workout-page, #search-results  {
     width: 60%;
     padding: 3.5em;
     overflow-y: auto;
@@ -565,7 +597,7 @@ blockquote footer {
     gap: 2em;
     justify-items: center;
     align-items: stretch;
-    margin-top: 2em;
+    margin: 2em;
     text-align: left;
     padding: 2em 0;
 }
@@ -718,8 +750,8 @@ blockquote footer {
 #main.journal-entry-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 60%;
+    align-items: center;
     margin: 0 auto;
     overflow-y: auto;
     overflow-x: hidden;
@@ -747,6 +779,7 @@ blockquote footer {
   padding: 2em 0; /* 16:9 aspect ratio */
   height: auto;
   overflow: hidden;
+  pointer-events: auto; /* Ensure iframe is clickable */
 }
 .responsive-video iframe {
   position: absolute;
@@ -754,6 +787,73 @@ blockquote footer {
   width: 100%;
   height: 110%;
   border: 0;
+  padding: 1em 0;;
+  pointer-events: auto !important;
+  z-index: 1 !important;
+}
+/* previous - next button */
+#workout-pagination button {
+    background: #a47e4d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0.5em;
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+#workout-pagination button:disabled {
+    background: #e0d3c0;
+    color: #888;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+#workout-pagination button:hover:not(:disabled) {
+    background: #cfab7c;
+    color: #292929;
+}
+#workout-pagination span {
+    font-size: 1rem;
+    color: #a47e4d;
+    font-weight: 500;
+    align-self: center;
+}
+.pagination-btn {
+    background: #a47e4d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0.5em;
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+.pagination-btn:disabled {
+    background: #e0d3c0;
+    color: #888;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.pagination-btn:hover:not(:disabled) {
+    background: #cfab7c;
+    color: #292929;
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 1em 0;
+}
+.pagination-container span {
+    font-size: 1rem;
+    color: #a47e4d;
+    font-weight: 500;
+    align-self: center;
 }
 /* === Light/Dark Mode Styles === */
 body.dark-mode {
@@ -1030,5 +1130,10 @@ body.dark-mode .feedback-date {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.5em;
+}
+#main.workout-session-main {
+    flex-direction: column !important;
+    align-items: stretch;
+    height: auto;
 }
 

@@ -1,7 +1,7 @@
 // Dynamically load the freejournal partial into #freejournal if present
 (function() {
   function loadFreeJournalPartial() {
-    var ctaDiv = document.getElementById('freejournal');
+    const ctaDiv = document.getElementById('freejournal');
     if (ctaDiv) {
       fetch('partials/freejournal.html')
         .then(res => res.text())

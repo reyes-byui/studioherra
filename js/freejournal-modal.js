@@ -1,12 +1,11 @@
 // Script to enable the freejournal partial's modal on any page
 (function() {
   function setupFreeJournalModal() {
-    // Find the button and modal in the DOM (works if partial is loaded dynamically or statically)
-    var getJournalBtn = document.querySelector('#freejournal .get-journal-btn, #get-journal');
-    var modal = document.getElementById('journal-modal');
-    var closeModal = document.getElementById('close-modal');
-    var form = document.getElementById('journal-form');
-    var thankYou = document.getElementById('thank-you');
+    const getJournalBtn = document.querySelector('#freejournal .get-journal-btn, #get-journal');
+    const modal = document.getElementById('journal-modal');
+    const closeModal = document.getElementById('close-modal');
+    const form = document.getElementById('journal-form');
+    const thankYou = document.getElementById('thank-you');
 
     if (getJournalBtn && modal && closeModal && form && thankYou) {
       getJournalBtn.onclick = function() {
@@ -27,7 +26,6 @@
       };
       form.onsubmit = async function(e) {
         e.preventDefault();
-        // Send form data to backend
         const payload = {
           email: form.email.value,
           name: form.name.value,
@@ -48,7 +46,6 @@
             }, 2000);
             form.reset();
           } else {
-            // Log error details for debugging
             let errorMsg = await resp.text();
             console.error('Submission failed:', resp.status, errorMsg);
             alert('Failed to submit. Please try again.');
@@ -61,10 +58,8 @@
     }
   }
 
-  // Expose for dynamic loader
   window.setupFreeJournalModal = setupFreeJournalModal;
 
-  // Run on DOMContentLoaded and after dynamic content loads
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupFreeJournalModal);
   } else {

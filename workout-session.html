@@ -12,45 +12,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Maven+Pro:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shippori+Mincho&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <style>
-        .home-hero {
-            display: none !important;
-        }
-        #main {
-            display: flex;
-            flex-direction: column;
-            width: 60%;
-            margin: 0 auto;
-            padding: 3.5em 0;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
-        }
-        #main::-webkit-scrollbar {
-            display: none;
-        }
-        /* Remove conflicting styles from sections */
-        #workout-page, #content {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            display: block;
-            overflow: visible;
-        }
-        /* Style the embedded workout video */
-        #workout-page iframe,
-        #workout-page .workout-video {
-            padding: 2em 0;
-        }
-        #content {
-            padding-top: 2em;
-        }
-    </style>
     </head>
     <body>
         <header id="header"></header>
-        <main id="main" >
+        <main id="main" class="workout-session-main">
             <section id="workout-page"></section>
             <section id="comment"></section>
             <section id="content"></section>
@@ -69,5 +34,6 @@
         <script src="js/freejournal-modal.js"></script>
         <script src="js/journal-category-toggle.js"></script>
         <script src="js/comment.js"></script>
+        <script src="js/search.js"></script>
     </body>
 </html>

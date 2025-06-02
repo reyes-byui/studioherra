@@ -1,33 +1,33 @@
 // Script to dynamically load the comment partial and set up the feedback form
 (function() {
   function loadCommentPartial() {
-    var placeholder = document.getElementById('comment');
+    const placeholder = document.getElementById('comment');
     if (!placeholder) return;
     fetch('partials/comment.html')
-      .then(function(response) { return response.text(); })
-      .then(function(html) {
+      .then(response => response.text())
+      .then(html => {
         placeholder.innerHTML = html;
         setupFeedbackForm();
       });
   }
 
   function setupFeedbackForm() {
-    var form = document.getElementById('feedback-form');
-    var feedbackList = document.getElementById('feedback-list');
+    const form = document.getElementById('feedback-form');
+    const feedbackList = document.getElementById('feedback-list');
     if (!form) return;
 
     // Dynamically set hidden fields based on page context
-    var page = window.location.pathname.split('/').pop() || 'index.html';
-    var category = '';
-    var entryId = '';
-    var main = document.getElementById('main');
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    let category = '';
+    let entryId = '';
+    const main = document.getElementById('main');
     if (main) {
       category = main.getAttribute('data-category') || '';
       entryId = main.getAttribute('data-entry-id') || '';
     }
     // If entryId is not set, try to get it from the URL (?id=...)
     if (!entryId) {
-      var params = new URLSearchParams(window.location.search);
+      const params = new URLSearchParams(window.location.search);
       entryId = params.get('id') || '';
     }
     form.querySelector('#feedback-page').value = page;
@@ -40,13 +40,13 @@
         .then(resp => resp.json())
         .then(data => {
           feedbackList.innerHTML = '';
-          data.forEach(function(fb) {
-            var commentDiv = document.createElement('div');
+          data.forEach(fb => {
+            const commentDiv = document.createElement('div');
             commentDiv.className = 'feedback-comment';
             // Format date string in Mountain Time (America/Denver)
-            var dateStr = '';
+            let dateStr = '';
             if (fb.date) {
-              var dateObj = new Date(fb.date);
+              const dateObj = new Date(fb.date);
               dateStr = `<span class="feedback-date">${dateObj.toLocaleString('en-US', { timeZone: 'America/Denver', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })} MT</span>`;
             }
             commentDiv.innerHTML = `<strong>${escapeHtml(fb.name)}:</strong> ${escapeHtml(fb.text)} ${dateStr}`;
@@ -57,8 +57,8 @@
 
     form.onsubmit = async function(e) {
       e.preventDefault();
-      var name = form.querySelector('#feedback-name').value;
-      var text = form.querySelector('#feedback-text').value;
+      const name = form.querySelector('#feedback-name').value;
+      const text = form.querySelector('#feedback-text').value;
       // Use the same page/category/entryId as above
       // Send feedback to backend
       try {
@@ -70,7 +70,7 @@
         if (resp.ok) {
           // Add feedback to the list dynamically
           if (feedbackList) {
-            var commentDiv = document.createElement('div');
+            const commentDiv = document.createElement('div');
             commentDiv.className = 'feedback-comment';
             commentDiv.innerHTML = '<strong>' + escapeHtml(name) + ':</strong> ' + escapeHtml(text);
             feedbackList.prepend(commentDiv);
@@ -88,7 +88,7 @@
 
   // Simple HTML escape to prevent XSS
   function escapeHtml(str) {
-    return str.replace(/[&<>"]/g, function(tag) {
+    return String(str).replace(/[&<>"]/g, function(tag) {
       const charsToReplace = {
         '&': '&amp;',
         '<': '&lt;',

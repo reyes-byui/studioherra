@@ -4,11 +4,11 @@
 window.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const entryId = params.get('id');
+    const journalContent = document.getElementById('journal-content');
     if (!entryId) {
-        document.getElementById('journal-content').innerHTML = '<p>No entry specified.</p>';
+        if (journalContent) journalContent.innerHTML = '<p>No entry specified.</p>';
         return;
     }
-    // Try to find the entry in all possible JSON files
     const jsonFiles = [
         'Health.json', 'Leisure.json', 'Self-Development.json', 'Abs.json', 'Cardio.json', 'Full-Body.json', 'Stretch.json', 'Booty.json', 'Arm.json', 'Thigh.json', 'Outdoors.json'
     ];
@@ -18,19 +18,19 @@ window.addEventListener('DOMContentLoaded', function() {
         fetch('json/' + file)
             .then(res => res.json())
             .then(entries => {
+                if (found) return; // Early exit if already found
                 const entry = Array.isArray(entries) ? entries.find(e => (e['data-id'] || e.id) === entryId) : null;
-                if (entry && !found) {
+                if (entry) {
                     found = true;
-                    // Render all entry details
-                    document.getElementById('journal-content').innerHTML = `
+                    if (journalContent) journalContent.innerHTML = `
                         <h2>${entry.title || 'Untitled'}</h2>
                         <div class="journal-meta">
                             <span class="journal-date">${entry['date-published'] || ''}</span> ― 
                             <span class="journal-author">${entry.author || ''}</span>
                         </div>
                         <p class="journal-description">${entry['meta-description'] || ''}</p>
-                        <div class="journal-image">${entry['meta-image'] ? `<img src="${entry['meta-image']}" alt="${entry.title || ''}">` : ''}</div>
-                        <div class="journal-image-url">${entry['image-url'] ? `<img src="${entry['image-url']}" alt="${entry.title || ''}">` : ''}</div>
+                        <div class="journal-image">${entry['meta-image'] ? `<img src="${entry['meta-image']}" alt="${entry.title || 'Journal image'}">` : ''}</div>
+                        <div class="journal-image-url">${entry['image-url'] ? `<img src="${entry['image-url']}" alt="${entry.title || 'Journal image'}">` : ''}</div>
                         <div class="journal-intro">${entry.introduction ? `<h3>Introduction</h3><p>${entry.introduction}</p>` : ''}</div>
                         <div class="journal-quote">${entry.quote ? `<blockquote>${entry.quote}</blockquote>` : ''}</div>
                         <div class="journal-body">${entry.body ? `<h3>Body</h3><p>${entry.body}</p>` : ''}</div>
@@ -53,14 +53,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     `;
                 }
                 loaded++;
-                if (loaded === jsonFiles.length && !found) {
-                    document.getElementById('journal-content').innerHTML = '<p>Entry not found.</p>';
+                if (loaded === jsonFiles.length && !found && journalContent) {
+                    journalContent.innerHTML = '<p>Entry not found.</p>';
                 }
             })
             .catch(() => {
                 loaded++;
-                if (loaded === jsonFiles.length && !found) {
-                    document.getElementById('journal-content').innerHTML = '<p>Entry not found.</p>';
+                if (loaded === jsonFiles.length && !found && journalContent) {
+                    journalContent.innerHTML = '<p>Entry not found.</p>';
                 }
             });
     });

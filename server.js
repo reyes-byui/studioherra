@@ -67,6 +67,28 @@ app.post('/api/feedback', async (req, res) => {
   }
 });
 
+// API endpoint to handle inquiry form submissions
+app.post('/api/inquiry', async (req, res) => {
+  try {
+    const { email, fname, lname, message } = req.body;
+    if (!email || !fname || !lname) {
+      return res.status(400).json({ error: 'All fields are required.' });
+    }
+    await db.collection('inquiry').insertOne({
+      email,
+      fname,
+      lname,
+      message,
+      date: new Date()
+    });
+    res.status(200).json({ success: true });
+  } catch (err) {
+    console.error('Error saving inquiry:', err);
+    // Send the error message to the client for easier debugging
+    res.status(500).json({ error: 'Failed to save inquiry.', details: err.message });
+  }
+});
+
 // GET endpoint to fetch feedback for a specific entry
 app.get('/api/feedback', async (req, res) => {
   try {
