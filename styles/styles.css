@@ -270,8 +270,7 @@ header {
     color: white;
 }
 #inquire {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -362,13 +361,13 @@ header {
   transition: color 0.2s;
 }
 .close:hover { color: #333; }
-#journal-form label, #inquire-form label {
+#journal-form label, #inquiry-form label {
   display: block;
   margin-top: 12px;
   font-weight: 500;
   font-family: "Arial", sans-serif;
 }
-#journal-form input, #journal-form textarea, #inquiry-form input, #inquire-form textarea, #inqiury-form input, #inqiury-form textarea {
+#journal-form input, #journal-form textarea, #inquiry-form input, #inquire-form textarea, #inquiry-form input, #inquiry-form textarea {
   width: 100%;
   padding: 8px 10px;
   margin-top: 4px;
@@ -378,7 +377,7 @@ header {
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
 }
-#journal-form .submit-btn, #inquire-form .submit-btn, #inqiury-form .submit-btn {
+#journal-form .submit-btn, #inquire-form .submit-btn, #inquiry-form .submit-btn {
   margin-top: 18px;
   width: 100%;
   background: #a47e4d;
@@ -391,7 +390,7 @@ header {
   transition: background 0.2s;
   font-family: "Arial", sans-serif;
 }
-#journal-form .submit-btn:hover, #inquire-form .submit-btn:hover, #inqiury-form .submit-btn:hover {
+#journal-form .submit-btn:hover, #inquire-form .submit-btn:hover, #inquiry-form .submit-btn:hover {
   background: #444;
 }
 #thank-you {

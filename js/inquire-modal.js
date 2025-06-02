@@ -2,7 +2,7 @@ window.setupInquireModal = function() {
   const openBtn = document.getElementById('inquire-here');
   const modal = document.getElementById('inquiry-modal');
   const closeBtn = document.getElementById('close-modal');
-  const form = document.getElementById('inqiury-form');
+  const form = document.getElementById('inquiry-form');
   const thankYou = document.getElementById('thank-you');
 
   if (!openBtn || !modal || !closeBtn || !form) return;
