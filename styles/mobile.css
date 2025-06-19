@@ -101,7 +101,7 @@ img {
     border-radius: 5px;
 }
 #journal-category a:hover {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
 }
 #header {
     display: flex; 
