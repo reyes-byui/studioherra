@@ -151,6 +151,7 @@ padding-top: 60px;
 }
 /* MAIN BODY */
 #home {
+    width: 100%;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -282,8 +283,10 @@ blockquote {
     align-items: center;
     align-content: center;
     width: 100%;
-    gap: 1em;
+    row-gap: 1em;
+    padding: 1em;
 }
+
 /* MAIN CONTENT ENDS HERE */
 /* FOOTER */
 #copyright {
