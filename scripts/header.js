@@ -1,4 +1,13 @@
 // Optimized and refactored header.js
+function applySavedMode() {
+    const saved = localStorage.getItem('color-mode');
+    if (saved === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}
+
 function loadHeaderAndMenu() {
     // Remove any existing header to avoid duplicates
     const oldHeader = document.getElementById('header');
@@ -21,8 +30,23 @@ function loadHeaderAndMenu() {
                     .then(resp => resp.text())
                     .then(menuHtml => {
                         nav.innerHTML = menuHtml;
-                        // Optionally, re-attach nav event listeners here
+                        applySavedMode(); // Always apply mode after header/menu load
+                        setTimeout(() => {
+                            const lightIcon = document.querySelector('.light-dark-mode .light-mode');
+                            const darkIcon = document.querySelector('.light-dark-mode .dark-mode');
+                            if (lightIcon) lightIcon.addEventListener('click', () => {
+                                document.body.classList.remove('dark-mode');
+                                localStorage.setItem('color-mode', 'light');
+                            });
+                            if (darkIcon) darkIcon.addEventListener('click', () => {
+                                document.body.classList.add('dark-mode');
+                                localStorage.setItem('color-mode', 'dark');
+                            });
+                            activateMainNavByHash(); // Ensure active nav is set after menu loads
+                        }, 100);
                     });
+            } else {
+                applySavedMode();
             }
         });
 }
@@ -131,7 +155,11 @@ document.body.addEventListener('click', function(e) {
 function activateMainNavByHash() {
     const hash = window.location.hash || '#home';
     document.querySelectorAll('.main-nav a').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === hash);
+        const isActive = link.getAttribute('href') === hash;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+            console.log('[NAV ACTIVE]', link.getAttribute('href'), 'set as active');
+        }
     });
 }
 // Wait for menu to load before activating nav
