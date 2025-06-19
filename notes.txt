@@ -1,0 +1,42 @@
+JOURNAL JSON
+{
+"data-id": "",
+"data-category": "",
+"title": "",
+"date-published": "",
+"author": "Hera",
+"meta-description": "",
+"meta-keywords": [""],
+"meta-image": "",
+"video-url": "",
+"introduction": "",
+"quote": "",
+"body": "",
+"image-url": "",
+"conclusion": "",
+"related-articles": [""]
+}
+
+--------------------------------------------------------------------------
+
+WORKOUT JSON
+{
+    "data-id": "",
+    "data-category": "",
+    "title": "",
+    "date-published": "",
+    "author": "",
+    "meta-description": "",
+    "meta-keywords": [""],
+    "meta-image": "",
+    "video-url": "",
+    "duration": "",
+    "intensity": "",
+    "equipment": [""],
+    "target-muscles": [""],
+    "notes": "",
+    "dietary-tips": "",
+    "related-workouts": [""],
+    "user-rating": "",
+    "comments": [{}]
+}
