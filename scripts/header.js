@@ -205,3 +205,26 @@ function waitForMenuAndActivate() {
     }
 }
 waitForMenuAndActivate();
+
+// Auto-open widget on homepage load
+if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+    window.addEventListener('DOMContentLoaded', function() {
+        // Simulate click on the widget arrow link if it exists
+        setTimeout(function() {
+            let widgetPanel = document.getElementById('slide-widget-panel');
+            if (!widgetPanel) {
+                widgetPanel = document.createElement('div');
+                widgetPanel.id = 'slide-widget-panel';
+                widgetPanel.innerHTML = '<div class="slide-widget-content"></div><button class="close-widget" aria-label="Close widget">&times;</button>';
+                document.body.appendChild(widgetPanel);
+            }
+            fetch('partials/widget.html')
+                .then(res => res.text())
+                .then(html => {
+                    widgetPanel.querySelector('.slide-widget-content').innerHTML = html;
+                    widgetPanel.classList.add('open');
+                    enableWidgetAutoClose(widgetPanel);
+                });
+        }, 400); // delay to ensure DOM is ready
+    });
+}
