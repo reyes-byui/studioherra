@@ -3,27 +3,26 @@
   function setupFreeJournalModal() {
     const getJournalBtn = document.querySelector('#freejournal .get-journal-btn, #get-journal');
     const modal = document.getElementById('journal-modal');
-    const closeModal = document.getElementById('close-modal');
     const form = document.getElementById('journal-form');
     const thankYou = document.getElementById('thank-you');
 
-    if (getJournalBtn && modal && closeModal && form && thankYou) {
+    if (getJournalBtn && modal && form && thankYou) {
       getJournalBtn.onclick = function() {
         modal.style.display = 'block';
         form.style.display = 'block';
         thankYou.style.display = 'none';
         document.body.style.overflow = 'hidden';
       };
-      closeModal.onclick = function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      };
-      modal.onclick = function(event) {
-        if (event.target === modal) {
+      // Use event delegation for close button
+      modal.addEventListener('click', function(event) {
+        if (
+          event.target.classList.contains('close') ||
+          event.target === modal
+        ) {
           modal.style.display = 'none';
           document.body.style.overflow = '';
         }
-      };
+      });
       form.onsubmit = async function(e) {
         e.preventDefault();
         const payload = {
