@@ -672,7 +672,7 @@ blockquote footer {
 }
 #widget .column-title h2 {
     margin: 0;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 /* SLIDE WIDGET PANEL */
