@@ -45,9 +45,13 @@ img {
     margin-left: -4em;
 }
 #journal-category-wrapper button {
-    background-color: #cfab7c;
-    border-radius: 5px; 
-    border: none;
+    display: inline-block;
+    position: fixed;
+    right: 2em;
+    top: 5em;
+    z-index: 200;
+    background-color: rgba(207, 171, 124, 0.8);
+    border-radius: 5px;
     padding: 0.5em 0.75em;
     font-size: 12pt;
     color: white;
@@ -56,13 +60,6 @@ img {
 }
 #journal-category-wrapper button:hover {
     background-color: #a47e4d;
-}
-#journal-category-toggle {
-    display: inline-block;
-    position: fixed;
-    right: 2em;
-    top: 5em;
-    z-index: 200;
 }
 
 #journal-category.collapsed {
