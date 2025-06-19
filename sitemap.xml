@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://herastreet.com/</loc>
+  </url>
+  <url>
+    <loc>https://herastreet.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://herastreet.com/journal-entry.html</loc>
+  </url>
+  <url>
+    <loc>https://herastreet.com/workout-session.html</loc>
+  </url>
+  <url>
+    <loc>https://herastreet.com/search.html</loc>
+  </url>
+  <!-- Only include real, user-facing pages. Remove content/ partials. -->
+</urlset>

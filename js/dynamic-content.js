@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(html => {
                 contentSection.innerHTML = html;
+                // Removed dynamic nav insertion for journal page
                 document.dispatchEvent(new Event('content:updated'));
             })
             .catch(() => {
@@ -52,4 +53,41 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Load content when hash changes
     window.addEventListener('hashchange', loadContentByHash);
+});
+
+document.addEventListener('content:updated', function() {
+    // Populate latest 2 Self-Development cards on about page
+    const aboutSection = document.getElementById('about');
+    const selfdevCardsContainer = document.getElementById('latest-selfdev-cards');
+    if (aboutSection && selfdevCardsContainer) {
+        fetch('json/Self-Development.json')
+            .then(resp => resp.json())
+            .then(data => {
+                // Sort by date-published descending (latest first)
+                data.sort((a, b) => new Date(b['date-published']) - new Date(a['date-published']));
+                const latestTwo = data.slice(0, 2);
+                let html = '<div class="selfdev-cards-grid">';
+                latestTwo.forEach(card => {
+                    html += `
+                    <div class="selfdev-card" tabindex="0" role="button" style="cursor:pointer" data-id="${card['data-id']}">
+                        <img src="${card['meta-image']}" alt="${card.title}">
+                        <h4>${card.title}</h4>
+                        <p>${card['meta-description']}</p>
+                    </div>`;
+                });
+                html += '</div>';
+                selfdevCardsContainer.innerHTML = html;
+                // Add click event listeners to open journal-entry.html with the card's id
+                selfdevCardsContainer.querySelectorAll('.selfdev-card').forEach(cardEl => {
+                    cardEl.addEventListener('click', function() {
+                        window.location.href = `journal-entry.html?id=${this.getAttribute('data-id')}`;
+                    });
+                    cardEl.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            window.location.href = `journal-entry.html?id=${this.getAttribute('data-id')}`;
+                        }
+                    });
+                });
+            });
+    }
 });

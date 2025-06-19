@@ -274,6 +274,16 @@ blockquote {
 .slide-widget-content::-webkit-scrollbar {
     display: none;
 }
+#topic-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    gap: 1em;
+}
 /* MAIN CONTENT ENDS HERE */
 /* FOOTER */
 #copyright {
