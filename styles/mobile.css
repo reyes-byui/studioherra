@@ -40,6 +40,7 @@ img {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
+    padding: 0 2em;
 }
 .widget-arrow {
     margin-left: -4em;
