@@ -331,6 +331,9 @@ header {
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
+  justify-content: center;
+    align-items: center;
+    align-content: center;
   z-index: 1000;
   left: 0;
   top: 0;
