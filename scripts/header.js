@@ -142,6 +142,7 @@ document.body.addEventListener('click', function(e) {
             .then(html => {
                 widgetPanel.querySelector('.slide-widget-content').innerHTML = html;
                 widgetPanel.classList.add('open');
+                enableWidgetAutoClose(widgetPanel);
             });
     }
     // Close widget
@@ -150,6 +151,37 @@ document.body.addEventListener('click', function(e) {
         if (widgetPanel) widgetPanel.classList.remove('open');
     }
 });
+
+// Close widget when a .column-title h2 is clicked
+// (delegated event handler)
+document.body.addEventListener('click', function(e) {
+    const h2 = e.target.closest('.column-title h2');
+    if (h2) {
+        const widgetPanel = document.getElementById('slide-widget-panel');
+        if (widgetPanel && widgetPanel.classList.contains('open')) {
+            widgetPanel.classList.remove('open');
+        }
+    }
+});
+
+// Automatically close widget when clicking outside
+function enableWidgetAutoClose(widgetPanel) {
+    function handleOutsideClick(event) {
+        // If click is outside widgetPanel, not the open link, and not a .column-title a
+        if (
+            widgetPanel.classList.contains('open') &&
+            !widgetPanel.contains(event.target) &&
+            !event.target.closest('a[href="partials/widget.html"]') &&
+            !event.target.closest('.column-title a')
+        ) {
+            widgetPanel.classList.remove('open');
+            document.removeEventListener('mousedown', handleOutsideClick);
+        }
+    }
+    setTimeout(() => {
+        document.addEventListener('mousedown', handleOutsideClick);
+    }, 0);
+}
 
 // Activate main nav by hash
 function activateMainNavByHash() {
