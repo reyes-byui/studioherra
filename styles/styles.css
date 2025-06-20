@@ -525,11 +525,14 @@ header {
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+#widget h1 {
+    text-align: center;
 } 
-.column-title h2, p{
+.column-title h3, p{
     padding: 0.5em 0;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 #left-column div, #right-column div {
     padding: 2em;
