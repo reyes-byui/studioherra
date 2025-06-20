@@ -795,19 +795,16 @@ blockquote footer {
     margin: 0;
     padding: 0;
 }
-.legal-part-one {
-    text-align: left !important;
-}
 .legal-part-one p,
 .legal-part-two p {
     margin: 0;
     padding: 0;
+    text-align: left !important;
 }
 .legal-part-one p a,
 .legal-part-two p a {
     margin: 0;
     padding: 0;
-    text-align: left;
     font-family: 'Arial', sans-serif;
     font-size: 9pt;
     display: inline-block;
