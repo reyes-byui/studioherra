@@ -82,6 +82,9 @@ header {
     width: 100%;
     height: auto;
 }
+.hera-name {
+    font-size: 12pt;
+}
 #journal {
     padding-top: 2em;
 }
