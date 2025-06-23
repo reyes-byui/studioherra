@@ -532,7 +532,13 @@ header {
 .column-title h3, p{
     padding: 0.5em 0;
     margin: 0;
+}
+.column-title h3 {
     text-align: center;
+}
+.column-title p {
+    text-align: left;
+    font-size: 12pt;
 }
 #left-column div, #right-column div {
     padding: 2em;
@@ -680,6 +686,9 @@ blockquote footer {
     margin: 0;
     text-align: left;
     width: 100%;
+}
+#widget img {
+    padding-top: 2em;
 }
 /* SLIDE WIDGET PANEL */
 #slide-widget-panel {
