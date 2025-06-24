@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #4d1919;
+    --secondary-color: #ffe100;
+    --background-color: #ffffff;
+    --text-color: #333;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: black;
+}
+#main-hear {
+    padding: 2em;
+    color:#ffffff;
+}
+
+/* --- Header Styles --- */
+#header-hera {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1000;
+  box-shadow: none;
+  padding: 0.5em 0 0.5em 0;
+  gap: 3em;
+}
+#header-hera .logo {
+  margin: 0 1.5em 0 0;
+  width: 80px;
+  filter: drop-shadow(0 0 8px #fff8);
+  align-self: flex-end;
+}
+#header-hera nav {
+  width: auto;
+}
+#header-hera ul {
+  list-style: none;
+  padding-right: 2em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5em;
+}
+#header-hera ul li {
+  position: relative;
+}
+#header-hera ul li a {
+  display: flex;
+  align-items: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 12pt;
+  color: #fff;
+  text-align: right;
+  text-decoration: none;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+  transition: none;
+  padding-right: 0.5em;
+  gap: 0.75em;
+}
+#header-hera ul li a::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff3;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}
+/* end of header */
+/* --- Footer Styles --- */
+#footer-hera {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  gap: 2em;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+#footer-hera .logo {
+  width: 40px;
+  margin-right: 1.5em;
+}
+#footer-hera p {
+  margin: 0;
+  color: #fff;
+  font-size: 1em;
+  flex: 1;
+  text-align: center;
+}
+#footer-hera .links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  margin-left: 2em;
+}
+#footer-hera .links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+/* main-home-hera */
+.home-buttons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5em;
+  z-index: 2000;
+  padding: 1em;
+  background: none;
+  pointer-events: auto;
+
+}
+.home-buttons button {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: #fff;
+  font-size: 16pt;
+  font-family: 'Times New Roman', serif;
+  padding: 0.7em 1.7em;
+  border-radius: 1.7em;
+  box-shadow: 0 2px 16px 0 rgba(255,255,255,0.08), 0 1.5px 8px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.home-buttons button:hover {
+  box-shadow: 0 4px 24px 0 rgba(255,255,255,0.12), 0 2px 12px 0 rgba(0,0,0,0.16);
+  background: rgba(255,255,255,0.12);
+  transform: scale(1.02);
+}
+#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#who-is-hera-content h1 {
+    font-size: 35pt;
+    color: #fff;
+    text-align: center;
+}
+#who-is-hera-content p, #what-i-do-content p, #why-work-with-me-content p, #feedback-content p {
+    font-size: 12pt;
+    color: #fff;
+    text-align: center;
+    width: 70%;
+    line-height: 1.5;
+    letter-spacing: 1pt;
+}
+#why-i-do-content p {
+    font-size: 12pt;
+    color: #fff;
+    text-align: justify;
+    width: 70%;
+    line-height: 1.5;
+    letter-spacing: 1pt;
+}
+#what-i-do-content h2, #why-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2 {
+    font-size: 30pt;
+    color: #fff;
+    text-align: center;
+}
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 1em 0 1em 0;
+    margin: 1.5em auto 0 auto;
+    gap: 1.2em;
+    width: 75%;
+    align-items: stretch;
+    justify-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 1em;
+    box-shadow: none;
+}
+.reasons > div {
+    background: rgba(255,255,255,0.07);
+    border-radius: 0.7em;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.08);
+    padding: 1.2em 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.14s, box-shadow 0.14s;
+}
+.reasons > div:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 4px 16px 0 #ffe10033, 0 1px 6px 0 rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.12);
+}
+.reasons img {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.7em;
+    filter: drop-shadow(0 1px 4px #ffe10033);
+}
+.reasons h3 {
+    color: #fff;
+    font-size: 20pt;
+    margin: 0.3em 0 0.3em 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+.reasons p {
+    color: #fff;
+    font-size: 12pt;
+    text-align: justify;
+    margin: 0;
+    line-height: 1.4;
+}
+/* main-home hera ends here */

@@ -14,13 +14,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname)); // Serve static files
 
-let db, freejournalCollection;
+let db, freejournalCollection, ratingsCollection;
 
 // Connect to MongoDB
 MongoClient.connect(MONGO_URI, { useUnifiedTopology: true })
   .then(client => {
     db = client.db('blog');
     freejournalCollection = db.collection('freejournal');
+    ratingsCollection = db.collection('ratings');
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`Server running on http://localhost:${PORT}`);
     });
@@ -86,6 +87,38 @@ app.post('/api/inquiry', async (req, res) => {
     console.error('Error saving inquiry:', err);
     // Send the error message to the client for easier debugging
     res.status(500).json({ error: 'Failed to save inquiry.', details: err.message });
+  }
+});
+
+// API endpoint for ratings feedback
+app.post('/api/ratings', async (req, res) => {
+  try {
+    const { firstName, lastName, email, rating, feedback } = req.body;
+    if (!firstName || !lastName || !email || !rating || !feedback) {
+      return res.status(400).json({ error: 'All fields are required.' });
+    }
+    await ratingsCollection.insertOne({
+      firstName,
+      lastName,
+      email,
+      rating,
+      feedback,
+      date: new Date()
+    });
+    res.status(200).json({ success: true });
+  } catch (err) {
+    console.error('Error saving rating:', err);
+    res.status(500).json({ error: 'Failed to save rating.' });
+  }
+});
+
+app.get('/api/ratings', async (req, res) => {
+  try {
+    const ratings = await ratingsCollection.find().sort({ date: -1 }).toArray();
+    res.status(200).json(ratings);
+  } catch (err) {
+    console.error('Error fetching ratings:', err);
+    res.status(500).json({ error: 'Failed to fetch ratings.' });
   }
 });
 

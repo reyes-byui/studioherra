@@ -1,0 +1,80 @@
+<div id="home-hera">
+    <div class="home-buttons">
+        <button id="who-is-hera">Who is Hera?</button>
+        <button id="what-i-do">What is Hera?</button>
+        <button id="why-i-do">Her Mission</button>
+        <button id="why-work-with-me">Why Work With Me?</button>
+        <button id="feedback">Rate Me</button>
+    </div>
+    <div id="who-is-hera-content">
+        <h1>Hello, I am Hera.</h1>
+        <p>A multi-disciplinary creative: designer, developer, storyteller, and brand builder.</p>
+    </div>
+    <div id="what-i-do-content">
+        <h2>What I Do</h2>
+        <p>
+            I craft multimedia content centered on wellness and lifestyle, blending technology with creativity. My expertise as a developer and designer is driven by a passion for balance, freedom, and inspiring others to live well through engaging digital experiences.
+        </p>
+    </div>
+    <div id="why-i-do-content">
+        <h2>My Mission</h2>
+        <p>
+            As a passionate Multimedia Developer with a strong background in Digital Media Development and Marketing, I strive to empower wellness brands through creative digital solutions. My journey at Brigham Young University-Idaho shaped me into a versatile Web Developer, blending technical expertise with a love for storytelling. Inspired by a commitment to a healthy lifestyle, I use my skills to help brands motivate others—knowing firsthand how wellness can uplift us through life's challenges, from relationships and finances to health and everyday pressures. My mission is to create meaningful content that encourages balance, resilience, and joy.
+        </p>
+    </div>
+    <div id="why-work-with-me-content">
+        <h2>Why Work With Me?</h2>
+        <div class="reasons">
+            <div class="dedicated">
+                <img src="../icons/dedication.svg" alt="dedicated">
+                <h3>Dedicated</h3>
+                <p>I am dedicated to understanding your unique needs and delivering tailored solutions that drive results.</p>
+            </div>
+            <div class="creative">
+                <img src="../icons/creative.svg" alt="creative">
+                <h3>Creative</h3>
+                <p>My creative approach ensures that your brand stands out with original and engaging content.</p>
+            </div>
+            <div class="results-driven">
+                <img src="../icons/results.svg" alt="results-driven">
+                <h3>Results-Driven</h3>
+                <p>I focus on measurable outcomes, ensuring that every project contributes to your business goals.</p>
+            </div>
+        </div>
+    </div>
+    <div id="feedback-content">
+        <h2>Client Feedback</h2>
+        <div class="ratings"></div>
+        <div class="feedback-item"></div>
+        <button id="submit-feedback" type="button">Rate Hera's Work</button>
+        <div id="feedback-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <h3>Submit Feedback</h3>
+                <form id="feedback-form">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                    </div>
+                    <label for="feedback">Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="3" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="feedback-success">
+                    Thank you for your feedback! We appreciate your input and support.
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- Autoscroll script removed. Place initialization in your main JS file after loading this content. -->
+</div>
