@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           }, 0);
         }
+        // Re-initialize project section scroll after loading projects.html
+        if (filePath.includes('projects.html')) {
+          setTimeout(() => {
+            if (typeof window.initProjectsSectionScroll === 'function') {
+              window.initProjectsSectionScroll();
+            }
+          }, 0);
+        }
       })
       .catch(error => {
         document.getElementById('main-hera').innerHTML = '<p>Content failed to load.</p>';
