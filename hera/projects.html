@@ -6,42 +6,67 @@
         <button id="other-projects">Other Projects</button>
     </div>
     <div id="latest-works-content">
-        <h2>Latest Works</h2>
-        <div class="latest-projects">
-            <button id="project-one-btn">Grandya</button>
-            <button id="project-two-btn">Foyo World</button>
-            <button id="project-three-btn">Samurai</button>
+        <div class="latest-works-header">
+            <h1>Latest Works</h1>
+            <p>Explore my latest projects that showcase my skills in multimedia development, design, and storytelling.</p>
         </div>
-        <div id="project-one-details" class="project-details">
-            <h2>Grandya</h2>
-            <p>Grandya is a digital platform designed to connect grandparents with their grandchildren through shared activities and experiences.</p>
-            <a href="https://grandya.com" target="_blank">Visit Grandya</a>
+        <div class="latest-works-carousel">
+            <!-- Background zoom div will be injected by JS -->
+            <div class="carousel-thumbnails">
+                <div class="carousel-thumbnail" data-slide="0">
+                    <img src="../images/image.jpg" alt="Grandya Thumbnail">
+                </div>
+                <div class="carousel-thumbnail" data-slide="1">
+                    <img src="../images/herra.jpg" alt="Foyo Thumbnail">
+                </div>
+                <div class="carousel-thumbnail" data-slide="2">
+                    <img src="../images/image.jpg" alt="Samurai Thumbnail">
+                </div>
+            </div>
+            <div class="carousel-slides">
+                <div class="carousel-slide active" id="slide-0" data-bg="https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <h1>Grandya</h1>
+                    <p>Grandya is a modern project focused on innovative solutions for urban living.</p>
+                    <a href="https://grandyacoffee.com" target="_blank">View Grandya</a>
+                </div>
+                <div class="carousel-slide" id="slide-1" data-bg="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <h1>Foyo</h1>
+                    <p>Foyo is a creative platform for sharing and discovering new ideas.</p>
+                    <a href="https://foyo.world" target="_blank">View Foyo</a>
+                </div>
+                <div class="carousel-slide" id="slide-2" data-bg="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <h1>Samurai</h1>
+                    <p>Samurai is a project that blends tradition with technology for a better future.</p>
+                    <a href="#" target="_blank">View Samurai</a>
+                </div>
+            </div>
         </div>
-        <div id="project-two-details" class="project-details">
-            <h2>Foyo World</h2>
-            <p>Foyo World is an interactive online community where users can explore, create, and share their own virtual worlds.</p>
-            <a href="https://foyoworld.com" target="_blank">Visit Foyo World</a>
-        </div>
-        <div id="project-three-details" class="project-details">
-            <h2>Samurai</h2>
-            <p>Samurai is a mobile app that offers guided meditation and mindfulness exercises to help users achieve mental clarity and relaxation.</p>
-            <a href="https://samuraiapp.com" target="_blank">Visit Samurai</a>
-        </div>
+        <script src="../scripts/latest-works-carousel.js"></script>
     </div>
     <div id="experience-content">
-        <h2>Professional Experiences</h2>
-        <ul>
-            <li>Software Engineer at Tech Company (2020 - Present)</li>
-            <li>Web Developer at Another Tech Company (2018 - 2020)</li>
-            <li>Intern at Startup (2017 - 2018)</li>
-        </ul>
+        <h2>Who I've Worked With</h2>
+        <div class="clients">
+            <img src="../icons/client1.svg" alt="Client 1">
+            <img src="../icons/client2.svg" alt="Client 2">
+            <img src="../icons/client3.svg" alt="Client 3">
+            <img src="../icons/client4.svg" alt="Client 4">
+            <img src="../icons/client5.svg" alt="Client 5">
+            <img src="../icons/client6.svg" alt="Client 6">
+            <img src="../icons/client7.svg" alt="Client 7">
+            <img src="../icons/client8.svg" alt="Client 8">
+            <img src="../icons/client9.svg" alt="Client 9">
+        </div>
     </div>
     <div id="education-content">
         <h2>Education</h2>
-        <ul>
-            <li>Bachelor of Science in Computer Science, University of Technology (2014 - 2018)</li>
-            <li>Certification in Web Development, Online Academy (2019)</li>
-        </ul>
+        <blockquote>
+            <h3>Bachelor of Science in Software Development</h3>
+            <p>Brigham Young University-Idaho, 2023</p>
+        </blockquote>
+        <blockquote>
+            <h3>Social Media Marketing</h3>
+            <p>Ensign College</p>
+        </blockquote>
     </div>
     <div id="other-projects-content">
         <h2>Other Projects</h2>

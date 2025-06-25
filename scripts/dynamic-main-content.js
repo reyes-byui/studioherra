@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof window.initProjectsSectionScroll === 'function') {
               window.initProjectsSectionScroll();
             }
+            // Dynamically load and execute latest-works-carousel.js
+            var script = document.createElement('script');
+            script.src = '../scripts/latest-works-carousel.js';
+            script.onload = function() {
+              if (typeof window.initLatestWorksCarousel === 'function') {
+                window.initLatestWorksCarousel();
+              }
+            };
+            document.body.appendChild(script);
           }, 0);
         }
       })

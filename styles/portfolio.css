@@ -12,8 +12,9 @@ html, body {
     background-color: black;
 }
 #main-hera {
-    padding: 2em;
     color:#ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 /* --- Header Styles --- */
@@ -136,10 +137,10 @@ html, body {
 
 }
 .home-buttons button, .project-buttons button {
+  border: white 1pt solid;
   background: rgba(255,255,255,0.08);
-  border: none;
   color: #fff;
-  font-size: 16pt;
+  font-size: 12pt;
   font-family: 'Times New Roman', serif;
   padding: 0.7em 1.7em;
   border-radius: 1.7em;
@@ -156,7 +157,7 @@ html, body {
   background: rgba(255,255,255,0.12);
   transform: scale(1.02);
 }
-#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content {
+#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content, #experience-content, #education-content {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -185,7 +186,7 @@ html, body {
     line-height: 1.5;
     letter-spacing: 1pt;
 }
-#what-i-do-content h2, #why-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2 {
+#what-i-do-content h2, #why-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2, #experience-content h2, #education-content h2 {
     font-size: 30pt;
     color: #fff;
     text-align: center;
@@ -251,4 +252,29 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.latest-projects {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.latest-works-header {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.clients {
+  display: grid;
+  padding: 2em 1em;
+  margin: 0 auto;
+  gap: 1em;
+  width: 70%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+#education-content blockquote {
+  text-align: center;
 }
