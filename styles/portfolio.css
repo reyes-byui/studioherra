@@ -88,7 +88,7 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgb(0, 0, 0, 0.8);
+  background: rgb(0, 0, 0, 0.2);
   padding: 0 2em;
   box-sizing: border-box;
   gap: 2em;
@@ -136,7 +136,7 @@ html, body {
   pointer-events: auto;
 
 }
-.home-buttons button, .project-buttons button {
+.home-buttons button, .project-buttons button, .project-details a  {
   border: white 1pt solid;
   background: rgba(255,255,255,0.08);
   color: #fff;
@@ -151,24 +151,30 @@ html, body {
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.2s, background 0.2s;
+  text-decoration: none;
 }
-.home-buttons button:hover, .project-buttons button:hover {
+.home-buttons button:hover, .project-buttons button:hover, .project-details a:hover {
   box-shadow: 0 4px 24px 0 rgba(255,255,255,0.12), 0 2px 12px 0 rgba(0,0,0,0.16);
   background: rgba(255,255,255,0.12);
   transform: scale(1.02);
 }
-#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content, #experience-content, #education-content {
+#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content, #experience-content, #education-content, .service-header {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
 }
-#who-is-hera-content h1 {
+#who-is-hera-content h1, .service-header h1{
     font-size: 35pt;
     color: #fff;
     text-align: center;
+}
+#what-i_do-content h3 {
+  font-size: 16pt;
 }
 #who-is-hera-content p, #what-i-do-content p, #why-work-with-me-content p, #feedback-content p {
     font-size: 12pt;
@@ -178,15 +184,15 @@ html, body {
     line-height: 1.5;
     letter-spacing: 1pt;
 }
-#why-i-do-content p {
-    font-size: 12pt;
+#why-i-do-content h2 {
+    font-size: 20pt;
     color: #fff;
-    text-align: justify;
+    text-align: center;
     width: 70%;
     line-height: 1.5;
     letter-spacing: 1pt;
 }
-#what-i-do-content h2, #why-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2, #experience-content h2, #education-content h2 {
+#what-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2, #experience-content h2, #education-content h2 {
     font-size: 30pt;
     color: #fff;
     text-align: center;
@@ -246,7 +252,7 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-.project-details {
+.project-details, #other-projects-content {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -277,4 +283,121 @@ html, body {
 }
 #education-content blockquote {
   text-align: center;
+}
+
+/* services */
+#services-hera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-header button {
+  background: white;
+  border: white 1pt solid;
+  color: black;
+  font-size: 26pt;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  padding: 0.25em 0.5em;
+  border-radius: 15px;
+  z-index: 1000 !important;
+}
+.service-header button:hover {
+  background: transparent;
+  color: white;
+}
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.cross-image {
+  width: 40%;
+  height: auto;
+}
+#services-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  width: 60%;
+  padding: 6em 0 8em 0;
+  margin: 0;
+  border-top: #ffffff 1px solid;
+}
+#what-i-do-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+}
+#what-i-do-list p {
+  background-color: rgba(78, 78, 78, 0.7);
+  padding: 0.25em;
+  color: #fff;
+  font-size: 14pt;
+  font-family: 'Times New Roman', serif;
+}
+/* backgrounds */
+
+#who-is-hera-content {
+  position: relative;
+  overflow: hidden;
+}
+#who-is-hera-content .bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+#who-is-hera-content > *:not(.bg-video) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slide-in animation for headings */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in animation for paragraphs and links */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.77,0,0.175,1) both;
+}
+.slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.77,0,0.175,1) both;
+}
+
+/* Optional: stagger effect for multiple elements */
+@media (prefers-reduced-motion: no-preference) {
+  .slide-in-left {
+    animation-delay: 0.1s;
+  }
+  .slide-in-right {
+    animation-delay: 0.2s;
+  }
 }

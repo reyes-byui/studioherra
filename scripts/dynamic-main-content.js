@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (typeof window.initHomeAutoscroll === 'function') {
               window.initHomeAutoscroll();
             }
+            // Dynamically load and execute hera-bg-video-parallax.js for parallax video effect
+            var script = document.createElement('script');
+            script.src = '../scripts/hera-bg-video-parallax.js';
+            document.body.appendChild(script);
           }, 0);
         }
         // Re-initialize project section scroll after loading projects.html
@@ -37,14 +41,49 @@ document.addEventListener('DOMContentLoaded', function () {
               window.initProjectsSectionScroll();
             }
             // Dynamically load and execute latest-works-carousel.js
-            var script = document.createElement('script');
-            script.src = '../scripts/latest-works-carousel.js';
-            script.onload = function() {
+            var script1 = document.createElement('script');
+            script1.src = '../scripts/latest-works-carousel.js';
+            script1.onload = function() {
               if (typeof window.initLatestWorksCarousel === 'function') {
                 window.initLatestWorksCarousel();
               }
             };
+            document.body.appendChild(script1);
+            // Dynamically load and execute other-projects-gallery.js
+            var script2 = document.createElement('script');
+            script2.src = '../scripts/other-projects-gallery.js';
+            script2.onload = function() {
+              if (typeof window.initOtherProjectsGallery === 'function') {
+                window.initOtherProjectsGallery();
+              }
+            };
+            document.body.appendChild(script2);
+          }, 0);
+        }
+        // Dynamically load and execute services-scroll.js for services.html
+        if (filePath.includes('services.html')) {
+          setTimeout(() => {
+            var script = document.createElement('script');
+            script.src = '../scripts/services-scroll.js';
+            script.onload = function() {
+              if (typeof window.initServicesScroll === 'function') {
+                window.initServicesScroll();
+              }
+            };
             document.body.appendChild(script);
+          }, 0);
+        }
+        // Always load and initialize scroll-animations.js for any main content page
+        if (filePath.includes('home.html') || filePath.includes('projects.html') || filePath.includes('services.html')) {
+          setTimeout(() => {
+            var animScript = document.createElement('script');
+            animScript.src = '../scripts/scroll-animations.js';
+            animScript.onload = function() {
+              if (typeof window.initScrollAnimations === 'function') {
+                window.initScrollAnimations();
+              }
+            };
+            document.body.appendChild(animScript);
           }, 0);
         }
       })

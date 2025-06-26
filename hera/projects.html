@@ -6,10 +6,6 @@
         <button id="other-projects">Other Projects</button>
     </div>
     <div id="latest-works-content">
-        <div class="latest-works-header">
-            <h1>Latest Works</h1>
-            <p>Explore my latest projects that showcase my skills in multimedia development, design, and storytelling.</p>
-        </div>
         <div class="latest-works-carousel">
             <!-- Background zoom div will be injected by JS -->
             <div class="carousel-thumbnails">
@@ -69,38 +65,35 @@
         </blockquote>
     </div>
     <div id="other-projects-content">
-        <h2>Other Projects</h2>
-        <div id="other-projects-list">
-            <button id="other-projects-one-btn">Project One</button>
-            <button id="other-projects-two-btn">Project Two</button>
-            <button id="other-projects-three-btn">Project Three</button>
-            <button id="other-projects-four-btn">Project Four</button>
-            <button id="other-projects-five-btn">Project Five</button>
+        <div class="other-projects-gallery">
+            <button class="other-projects-arrow left" aria-label="Previous Project">&#8592;</button>
+            <div id="other-projects-one-details" class="project-details active">
+                <h2>Project One</h2>
+                <p>Description of Project One.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div id="other-projects-two-details" class="project-details">
+                <h2>Project Two</h2>
+                <p>Description of Project Two.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div id="other-projects-three-details" class="project-details">
+                <h2>Project Three</h2>
+                <p>Description of Project Three.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div id="other-projects-four-details" class="project-details">
+                <h2>Project Four</h2>
+                <p>Description of Project Four.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div id="other-projects-five-details" class="project-details">
+                <h2>Project Five</h2>
+                <p>Description of Project Five.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <button class="other-projects-arrow right" aria-label="Next Project">&#8594;</button>
         </div>
-        <div id="other-projects-one-details" class="project-details">
-            <h2>Project One</h2>
-            <p>Description of Project One.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-        <div id="other-projects-two-details" class="project-details">
-            <h2>Project Two</h2>
-            <p>Description of Project Two.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-        <div id="other-projects-three-details" class="project-details">
-            <h2>Project Three</h2>
-            <p>Description of Project Three.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-        <div id="other-projects-four-details" class="project-details">
-            <h2>Project Four</h2>
-            <p>Description of Project Four.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-        <div id="other-projects-five-details" class="project-details">
-            <h2>Project Five</h2>
-            <p>Description of Project Five.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
+        <script src="../scripts/other-projects-gallery.js"></script>
     </div>
 </div>
