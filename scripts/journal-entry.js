@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
     }
     const jsonFiles = [
-        'Health.json', 'Leisure.json', 'Self-Development.json', 'Abs.json', 'Cardio.json', 'Full-Body.json', 'Stretch.json', 'Booty.json', 'Arm.json', 'Thigh.json', 'Outdoors.json'
+        'Health.json', 'Leisure.json', 'Anti-Aging.json', 'Abs.json', 'Cardio.json', 'Full-Body.json', 'Stretch.json', 'Booty.json', 'Arm.json', 'Thigh.json', 'Outdoors.json'
     ];
     let found = false;
     let loaded = 0;

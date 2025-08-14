@@ -139,6 +139,13 @@ document.body.addEventListener('click', function(e) {
                     } else if (fileToLoad === 'content/workout.html') {
                         const workoutSection = document.getElementById('workout');
                         if (workoutSection) workoutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Automatically select Full-Body category
+                        setTimeout(() => {
+                            const fullBodyLink = document.querySelector('#workout-category a[data-category="Full-Body"]');
+                            if (fullBodyLink) {
+                                fullBodyLink.click();
+                            }
+                        }, 100);
                     }
                 }, 50);
             });
