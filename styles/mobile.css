@@ -73,7 +73,7 @@ img {
     right: 0;
     background: transparent;
     border-radius: 0 0 8px 8px;
-    z-index: 100;
+    z-index: 1000;
     top: 9em;
 }   
 #journal-category ul {

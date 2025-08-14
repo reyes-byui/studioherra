@@ -54,6 +54,23 @@ function loadHeaderAndMenu() {
 window.addEventListener('DOMContentLoaded', loadHeaderAndMenu);
 window.addEventListener('hashchange', loadHeaderAndMenu);
 
+// Hide .home-hero on all pages except index.html (homepage)
+function updateHomeHeroVisibility() {
+    var hero = document.querySelector('.home-hero');
+    // Check if #content contains content/home.html (assume loaded via AJAX)
+    var content = document.getElementById('content');
+    if (!hero) return;
+    if (content && content.innerHTML.includes('id="home"')) {
+        hero.style.display = '';
+    } else {
+        hero.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateHomeHeroVisibility);
+window.addEventListener('hashchange', updateHomeHeroVisibility);
+document.addEventListener('content:updated', updateHomeHeroVisibility);
+
 // Light/Dark mode logic
 function setMode(mode) {
     if (mode === 'dark') {
