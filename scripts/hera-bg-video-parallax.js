@@ -3,7 +3,7 @@ window.initBgVideoParallax = function() {
   // Remove any previous scroll listeners to avoid stacking
   window.removeEventListener('scroll', window._heraBgVideoParallaxScrollHandler);
   window._heraBgVideoParallaxScrollHandler = function() {
-    const video = document.querySelector('#who-is-hera-content .bg-video');
+    const video = document.getElementById('hera-bg-video');
     if (video) {
       const offset = window.scrollY * 0.5;
       video.style.transform = `translateY(${offset}px)`;

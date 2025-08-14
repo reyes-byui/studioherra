@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Dynamically load and execute hera-bg-video-parallax.js for parallax video effect
             var script = document.createElement('script');
             script.src = '../scripts/hera-bg-video-parallax.js';
+            script.onload = function() {
+              if (typeof window.initBgVideoParallax === 'function') {
+                window.initBgVideoParallax();
+              }
+            };
             document.body.appendChild(script);
           }, 0);
         }

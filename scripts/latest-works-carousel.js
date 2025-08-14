@@ -18,14 +18,14 @@
 
         // Set Grandya (slide-0) as active by default
         slides.forEach(slide => {
-            if (slide.id === 'slide-0') {
+            if (slide.id === 'slide-1') {
                 slide.classList.add('active');
             } else {
                 slide.classList.remove('active');
             }
         });
 
-        const activeSlide = document.getElementById('slide-0');
+        const activeSlide = document.getElementById('slide-1');
         // Set background image from slide's data-bg attribute
         const bgUrl = activeSlide ? activeSlide.getAttribute('data-bg') : '';
         if (bgUrl) {

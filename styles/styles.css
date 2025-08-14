@@ -797,6 +797,7 @@ blockquote footer {
     z-index: 10;
     padding: 1em 0;
     margin: 0;
+    position: relative;
 }
 .legal {
     display: flex;

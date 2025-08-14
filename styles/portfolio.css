@@ -8,28 +8,39 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: var(--text-color);
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }
+/* fonts */
+#who-is-hera-content {
+  color: #ffffff;
+}
+#what-i-do-content h2 {
+  /* background: linear-gradient(90deg, rgb(199, 136, 0) 20%, #c2a250 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; */
+  font-size: 40pt !important;
+  
+}
+/* end of font colors */
 #main-hera {
-    color:#ffffff;
     margin: 0;
     padding: 0;
 }
-
 /* --- Header Styles --- */
 #header-hera {
   position: fixed;
   top: 0;
   right: 0;
-  width: 100vw;
+  width: fit-content;
   height: auto;
   background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  z-index: 1000;
+  z-index: 3000;
   box-shadow: none;
   padding: 0.5em 0 0.5em 0;
   gap: 3em;
@@ -58,9 +69,10 @@ html, body {
 #header-hera ul li a {
   display: flex;
   align-items: center;
-  font-family: 'Times New Roman', serif;
-  font-size: 12pt;
-  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13pt;
+  font-weight: 500;
+  color: #ffffff;
   text-align: right;
   text-decoration: none;
   background: none;
@@ -70,6 +82,7 @@ html, body {
   transition: none;
   padding-right: 0.5em;
   gap: 0.75em;
+  /* -webkit-text-stroke: 0.2px #0d3d80; */
 }
 #header-hera ul li a::after {
   content: '';
@@ -88,7 +101,7 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgb(0, 0, 0, 0.2);
+  background: rgb(72, 125, 209);
   padding: 0 2em;
   box-sizing: border-box;
   gap: 2em;
@@ -96,6 +109,7 @@ html, body {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 5000;
 }
 #footer-hera .logo {
   width: 70px;
@@ -137,8 +151,8 @@ html, body {
 
 }
 .home-buttons button, .project-buttons button, .project-details a  {
-  border: white 1pt solid;
-  background: rgba(255,255,255,0.08);
+  border: rgb(255, 225, 126) 1px solid;
+  background: linear-gradient(-90deg, rgb(199, 136, 0) 50%, #c2a250 100%);
   color: #fff;
   font-size: 12pt;
   font-family: 'Times New Roman', serif;
@@ -155,10 +169,10 @@ html, body {
 }
 .home-buttons button:hover, .project-buttons button:hover, .project-details a:hover {
   box-shadow: 0 4px 24px 0 rgba(255,255,255,0.12), 0 2px 12px 0 rgba(0,0,0,0.16);
-  background: rgba(255,255,255,0.12);
+  background: rgba(77, 121, 180, 0.5);
   transform: scale(1.02);
 }
-#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content, #experience-content, #education-content, .service-header {
+#who-is-hera-content, #what-i-do-content, #why-i-do-content, #why-work-with-me-content, #feedback-content, #experience-content, #education-content, .service-header, #creative-samples {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -168,34 +182,66 @@ html, body {
     padding: 0;
     margin: 0;
 }
-#who-is-hera-content h1, .service-header h1{
-    font-size: 35pt;
-    color: #fff;
-    text-align: center;
+#creative-samples {
+  background: #4d71a2;
+  color: #ffffff;
 }
-#what-i_do-content h3 {
+#experience-content {
+  background: #0d3d80;
+  color: #ffffff;
+}
+#why-work-with-me-content {
+  color: white;
+}
+#why-work-with-me-content {
+  background: linear-gradient(0deg,#0d3d80 50%, rgb(2, 83, 183) 100%);
+}
+#who-is-hera-content h1 {
+    font-size: 35pt;
+    text-align: center;
+    padding: 0.25em 1.5em;
+    /* background: rgba(19, 80, 210, 0.5); */
+    /* border-radius: 30px; */
+    /* border: 1pt solid #ffffff; */
+    margin: 0;
+    /* -webkit-text-stroke: 1px #ffbb00; */
+}
+.service-header h1{
+    font-size: 35pt;
+    text-align: center;
+    color: #ffffff;
+    /* -webkit-text-stroke: 1px #ffbb00; */
+}
+#what-i-do-content h3 {
   font-size: 16pt;
 }
 #who-is-hera-content p, #what-i-do-content p, #why-work-with-me-content p, #feedback-content p {
     font-size: 12pt;
-    color: #fff;
     text-align: center;
     width: 70%;
     line-height: 1.5;
     letter-spacing: 1pt;
+    margin: 0;
+    padding: 0;
+}
+#why-work-with-me-content p {
+  text-align: left !important;
 }
 #why-i-do-content h2 {
     font-size: 20pt;
-    color: #fff;
     text-align: center;
     width: 70%;
     line-height: 1.5;
     letter-spacing: 1pt;
+    color: #ffffff;
 }
 #what-i-do-content h2, #why-work-with-me-content h2, #feedback-content h2, #experience-content h2, #education-content h2 {
     font-size: 30pt;
-    color: #fff;
     text-align: center;
+}
+#feedback-content {
+  background-color:white;
+  color: black;
 }
 .reasons {
     display: grid;
@@ -212,19 +258,14 @@ html, body {
     box-shadow: none;
 }
 .reasons > div {
-    background: rgba(255,255,255,0.07);
-    border-radius: 0.7em;
+    /* background: linear-gradient(180deg, #000000 20%, #640000 50%, #ff9800 100%); */
     box-shadow: 0 1px 6px 0 rgba(0,0,0,0.08);
     padding: 1.2em 1em 1em 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.14s, box-shadow 0.14s;
-}
-.reasons > div:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 4px 16px 0 #ffe10033, 0 1px 6px 0 rgba(0,0,0,0.12);
-    background: rgba(255,255,255,0.12);
+    border: #f8f1b1 1px solid;
 }
 .reasons img {
     width: 38px;
@@ -233,14 +274,12 @@ html, body {
     filter: drop-shadow(0 1px 4px #ffe10033);
 }
 .reasons h3 {
-    color: #fff;
     font-size: 20pt;
     margin: 0.3em 0 0.3em 0;
     letter-spacing: 0.5px;
     text-align: center;
 }
 .reasons p {
-    color: #fff;
     font-size: 12pt;
     text-align: justify;
     margin: 0;
@@ -271,7 +310,6 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
 }
 .clients {
   display: grid;
@@ -280,6 +318,12 @@ html, body {
   gap: 1em;
   width: 70%;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: center;
+}
+.clients img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 #education-content blockquote {
   text-align: center;
@@ -322,11 +366,10 @@ html, body {
 #services-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2em;
+  gap: 4em;
   width: 60%;
   padding: 6em 0 8em 0;
   margin: 0;
-  border-top: #ffffff 1px solid;
 }
 #what-i-do-list {
   display: flex;
@@ -334,33 +377,73 @@ html, body {
   gap: 1em;
   width: 70%;
   margin: 0 auto;
+  padding: 1em 0 2em 0;
 }
 #what-i-do-list p {
-  background-color: rgba(78, 78, 78, 0.7);
+  background-color: rgb(73, 127, 171);
+  color: white;
   padding: 0.25em;
-  color: #fff;
   font-size: 14pt;
   font-family: 'Times New Roman', serif;
 }
 /* backgrounds */
-
-#who-is-hera-content {
+#who-is-hera-content,#what-i-do-content,#why-i-do-content, .service-header {
   position: relative;
   overflow: hidden;
 }
-#who-is-hera-content .bg-video {
+#who-is-hera-content .bg-video,#what-i-do-content .bg-video, #why-i-do-content .bg-video, .service-header .bg-video {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
   display: block;
+  object-position: bottom;
+  filter: brightness(0.9);
 }
-#who-is-hera-content > *:not(.bg-video) {
+#who-is-hera-content > *:not(.bg-video),#what-i-do-content > *:not(.bg-video), #why-i-do-content > *:not(.bg-video),  .service-header > *:not(.bg-video){
   position: relative;
   z-index: 1;
 }
-
+.dedicated, .creative, .results-driven {
+  background-image: url('/images/hera.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  background-size: auto;
+}
+.dedicated::before, .creative::before, .results-driven::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* Adjust opacity for darkness */
+  z-index: 1;
+  pointer-events: none;
+}
+.dedicated > *, .creative > *, .results-driven > * {
+  position: relative;
+  z-index: 2;
+}
+#what-i-do-content .bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+  object-position: top;
+}
+#what-i-do-content {
+  background: white;
+  color: black;
+    /* background: url('/images/pines.jpg') no-repeat center center fixed; */
+}
+#widc1, #widc2, #widc3, #widc4 {
+  position: relative;
+  object-fit: cover;
+}
 /* Slide-in animation for headings */
 @keyframes slideInLeft {
   from {
